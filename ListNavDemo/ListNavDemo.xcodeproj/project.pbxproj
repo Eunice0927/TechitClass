@@ -14,6 +14,8 @@
 		DEA42AE72AF4E16900793936 /* ListNavDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42AE62AF4E16900793936 /* ListNavDemoTests.swift */; };
 		DEA42AF12AF4E16900793936 /* ListNavDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42AF02AF4E16900793936 /* ListNavDemoUITests.swift */; };
 		DEA42AF32AF4E16900793936 /* ListNavDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42AF22AF4E16900793936 /* ListNavDemoUITestsLaunchTests.swift */; };
+		DEA42B002AF4E1C500793936 /* CarAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA42AFF2AF4E1C500793936 /* CarAssets.xcassets */; };
+		DEA42B022AF4E1E200793936 /* carData.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA42B012AF4E1E200793936 /* carData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		DEA42AEC2AF4E16900793936 /* ListNavDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListNavDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA42AF02AF4E16900793936 /* ListNavDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavDemoUITests.swift; sourceTree = "<group>"; };
 		DEA42AF22AF4E16900793936 /* ListNavDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DEA42AFF2AF4E1C500793936 /* CarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CarAssets.xcassets; sourceTree = "<group>"; };
+		DEA42B012AF4E1E200793936 /* carData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				DEA42AD52AF4E16800793936 /* ListNavDemoApp.swift */,
 				DEA42AD72AF4E16800793936 /* ContentView.swift */,
+				DEA42B012AF4E1E200793936 /* carData.json */,
+				DEA42AFF2AF4E1C500793936 /* CarAssets.xcassets */,
 				DEA42AD92AF4E16900793936 /* Assets.xcassets */,
 				DEA42ADB2AF4E16900793936 /* Preview Content */,
 			);
@@ -231,8 +237,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA42B022AF4E1E200793936 /* carData.json in Resources */,
 				DEA42ADD2AF4E16900793936 /* Preview Assets.xcassets in Resources */,
 				DEA42ADA2AF4E16900793936 /* Assets.xcassets in Resources */,
+				DEA42B002AF4E1C500793936 /* CarAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
