@@ -16,6 +16,9 @@
 		DEA42AF32AF4E16900793936 /* ListNavDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42AF22AF4E16900793936 /* ListNavDemoUITestsLaunchTests.swift */; };
 		DEA42B002AF4E1C500793936 /* CarAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA42AFF2AF4E1C500793936 /* CarAssets.xcassets */; };
 		DEA42B022AF4E1E200793936 /* carData.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA42B012AF4E1E200793936 /* carData.json */; };
+		DEA42B042AF4E27300793936 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42B032AF4E27300793936 /* Car.swift */; };
+		DEA42B062AF4E29500793936 /* carData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42B052AF4E29500793936 /* carData.swift */; };
+		DEA42B082AF4E2B100793936 /* CarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA42B072AF4E2B100793936 /* CarStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		DEA42AF22AF4E16900793936 /* ListNavDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DEA42AFF2AF4E1C500793936 /* CarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CarAssets.xcassets; sourceTree = "<group>"; };
 		DEA42B012AF4E1E200793936 /* carData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carData.json; sourceTree = "<group>"; };
+		DEA42B032AF4E27300793936 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		DEA42B052AF4E29500793936 /* carData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carData.swift; sourceTree = "<group>"; };
+		DEA42B072AF4E2B100793936 /* CarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 			children = (
 				DEA42AD52AF4E16800793936 /* ListNavDemoApp.swift */,
 				DEA42AD72AF4E16800793936 /* ContentView.swift */,
+				DEA42B032AF4E27300793936 /* Car.swift */,
+				DEA42B052AF4E29500793936 /* carData.swift */,
+				DEA42B072AF4E2B100793936 /* CarStore.swift */,
 				DEA42B012AF4E1E200793936 /* carData.json */,
 				DEA42AFF2AF4E1C500793936 /* CarAssets.xcassets */,
 				DEA42AD92AF4E16900793936 /* Assets.xcassets */,
@@ -265,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA42B062AF4E29500793936 /* carData.swift in Sources */,
 				DEA42AD82AF4E16800793936 /* ContentView.swift in Sources */,
 				DEA42AD62AF4E16800793936 /* ListNavDemoApp.swift in Sources */,
+				DEA42B042AF4E27300793936 /* Car.swift in Sources */,
+				DEA42B082AF4E2B100793936 /* CarStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
