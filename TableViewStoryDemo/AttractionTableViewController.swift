@@ -93,6 +93,12 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
         tableView.reloadData()
     }
     
+    // 검색 취소 버튼 처리(검색 적용)
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        tableView.reloadData()
+    }
+    
     // 뷰가 보일 때 마다 리스트의 데이터를 다시 불러옴
     override func viewWillAppear(_ animated: Bool) {
         tvListView.reloadData()
@@ -148,7 +154,6 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
             
             // 삭제할 아이템 위치를 기록
             let row = indexPath.row
-            print("삭제할 아이템 위치: \(row), \(matches[row])")
             // 검색 적용
             if self.searching {
                 self.attractionNames.remove(at: matches[row])
@@ -163,7 +168,7 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
                 self.webAddresses.remove(at: row)
             }
             
-            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
