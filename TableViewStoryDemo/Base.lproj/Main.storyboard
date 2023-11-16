@@ -19,21 +19,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttractionTableCell" id="521-Ns-c1b" customClass="AttractionTableViewCell" customModule="TableViewStoryDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="521-Ns-c1b" id="xJ6-lO-LZT">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDx-ea-k3E">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="42.666666666666664"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="aA2-LE-TRo"/>
                                                 <constraint firstAttribute="width" constant="150" id="l4o-Ul-1TS"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-24-eyx">
-                                            <rect key="frame" x="158" y="11" width="215" height="21"/>
+                                            <rect key="frame" x="158" y="11.000000000000002" width="215" height="20.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -61,7 +61,13 @@
                             <outlet property="delegate" destination="HEf-xe-xyT" id="E17-RC-L2h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Attractions" id="5Ap-BH-sgJ"/>
+                    <navigationItem key="navigationItem" title="Attractions" id="5Ap-BH-sgJ">
+                        <barButtonItem key="leftBarButtonItem" title="SwiftUI" id="NEE-rm-FNv">
+                            <connections>
+                                <segue destination="Oy9-eV-uxa" kind="show" id="ONm-Nu-Abo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tvListView" destination="RBS-iv-h4T" id="rQa-QO-Mnj"/>
                     </connections>
@@ -69,6 +75,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmA-mz-Z5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2049.6183206106871" y="-32.394366197183103"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="edr-hs-wXm">
+            <objects>
+                <viewController id="Oy9-eV-uxa" customClass="ViewController" customModule="TableViewStoryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xfa-bN-ZM6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="S1P-iN-fh5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xLJ-rc-Fof"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6s-b6-jTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3668" y="-32"/>
         </scene>
         <!--Attraction Details-->
         <scene sceneID="VXh-Gv-Jag">
@@ -103,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdg-wo-BMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2931" y="-22"/>
+            <point key="canvasLocation" x="2876" y="-32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wCa-il-lEI">

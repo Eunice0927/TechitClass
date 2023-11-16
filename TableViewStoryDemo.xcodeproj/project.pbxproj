@@ -16,6 +16,7 @@
 		DEC469EA2B059DF30037FA7C /* AttractionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */; };
 		DEC46A0E2B05B53C0037FA7C /* AttractionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC46A0D2B05B53C0037FA7C /* AttractionTableViewCell.swift */; };
 		DEC46A102B05DDBE0037FA7C /* AttractionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC46A0F2B05DDBE0037FA7C /* AttractionDetailViewController.swift */; };
+		DEC46A122B060A680037FA7C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC46A112B060A680037FA7C /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionTableViewController.swift; sourceTree = "<group>"; };
 		DEC46A0D2B05B53C0037FA7C /* AttractionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionTableViewCell.swift; sourceTree = "<group>"; };
 		DEC46A0F2B05DDBE0037FA7C /* AttractionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailViewController.swift; sourceTree = "<group>"; };
+		DEC46A112B060A680037FA7C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DEC469E32B059C360037FA7C /* Info.plist */,
 				DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */,
 				DEC46A0F2B05DDBE0037FA7C /* AttractionDetailViewController.swift */,
+				DEC46A112B060A680037FA7C /* SwiftUIView.swift */,
 			);
 			path = TableViewStoryDemo;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC46A0E2B05B53C0037FA7C /* AttractionTableViewCell.swift in Sources */,
+				DEC46A122B060A680037FA7C /* SwiftUIView.swift in Sources */,
 				DEC469DA2B059C340037FA7C /* ViewController.swift in Sources */,
 				DEC46A102B05DDBE0037FA7C /* AttractionDetailViewController.swift in Sources */,
 				DEC469D62B059C340037FA7C /* AppDelegate.swift in Sources */,
