@@ -13,6 +13,7 @@
 		DEC469DD2B059C340037FA7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC469DB2B059C340037FA7C /* Main.storyboard */; };
 		DEC469DF2B059C360037FA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC469DE2B059C360037FA7C /* Assets.xcassets */; };
 		DEC469E22B059C360037FA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC469E02B059C360037FA7C /* LaunchScreen.storyboard */; };
+		DEC469EA2B059DF30037FA7C /* AttractionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DEC469DE2B059C360037FA7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC469E12B059C360037FA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC469E32B059C360037FA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DEC469DE2B059C360037FA7C /* Assets.xcassets */,
 				DEC469E02B059C360037FA7C /* LaunchScreen.storyboard */,
 				DEC469E32B059C360037FA7C /* Info.plist */,
+				DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */,
 			);
 			path = TableViewStoryDemo;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				DEC469DA2B059C340037FA7C /* ViewController.swift in Sources */,
 				DEC469D62B059C340037FA7C /* AppDelegate.swift in Sources */,
+				DEC469EA2B059DF30037FA7C /* AttractionTableViewController.swift in Sources */,
 				DEC469D82B059C340037FA7C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +304,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +333,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
