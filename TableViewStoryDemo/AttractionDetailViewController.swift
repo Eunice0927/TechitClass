@@ -16,6 +16,8 @@ class AttractionDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.largeTitleDisplayMode = .never
 
         if let address = webSite, let webURL = URL(string: address) {
             let urlRequest = URLRequest(url: webURL)

@@ -53,6 +53,8 @@ class AttractionTableViewController: UITableViewController {
         // 테이블 뷰의 예상 행 높이 설정
         // 테이블 보기 탐색을 추가할 때 행 높이가 축소되는 것을 방지하고, 테이블 렌더링 성능도 향상
         self.tableView.estimatedRowHeight = 50
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // 뷰가 보일 때 마다 리스트의 데이터를 다시 불러옴
