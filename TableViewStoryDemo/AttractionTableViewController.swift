@@ -23,6 +23,11 @@ class AttractionTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    // 뷰가 보일 때 마다 리스트의 데이터를 다시 불러옴
+    override func viewWillAppear(_ animated: Bool) {
+        tvListView.reloadData()
+    }
 
     // MARK: - Table view data source
 
