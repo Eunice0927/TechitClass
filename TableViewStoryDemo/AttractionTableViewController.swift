@@ -7,13 +7,19 @@
 
 import UIKit
 
-class AttractionTableViewController: UITableViewController {
-    
+class AttractionTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+
     // 테이블 목록
     var items = ["Kim", "Lee", "Park"]
     var attractionImages = [String]()
     var attractionNames = [String]()
     var webAddresses = [String]()
+    
+    // UISearchController 인스턴스 및 일치하는 검색 결과가 저장될 배열 추가
+    var searching = false
+    var matches = [Int]()
+    var searchController = UISearchController(searchResultsController: nil)
+    
     
     @IBOutlet var tvListView: UITableView!
     
@@ -55,6 +61,23 @@ class AttractionTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 50
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // 검색 초기화
+        // 테이블 보기 컨트롤러 인스턴스를 검색 컨트롤러에 대한 검색 창 및 결과 업데이트 위임지로 지정
+        // 검색으로 인해 검색 결과 보기 컨트롤러가 모호해지는 것을 방지하기 위한 속성을 설정
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search Attractions"
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    // 결과 업데이트 대리자로 지정
+    // 검색 창에 입력된 텍스트가 포함된 검색 컨트롤러 개체에 대한 참조가 전달됨.
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
     
     // 뷰가 보일 때 마다 리스트의 데이터를 다시 불러옴
