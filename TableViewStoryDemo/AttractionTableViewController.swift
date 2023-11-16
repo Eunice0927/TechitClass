@@ -21,7 +21,7 @@ class AttractionTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -44,6 +44,7 @@ class AttractionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttractionTableCell", for: indexPath)
 
         cell.textLabel?.text = items[indexPath.row]
+        cell.imageView?.image = UIImage(systemName: "square.and.arrow.up")
 
         return cell
     }
@@ -57,24 +58,37 @@ class AttractionTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
+    // 목록 삭제
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            items.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
+    // Delete 를 한글로 변경
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "삭제"
+    }
+    
 
-    /*
+    // 목록 순서 바꾸기
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        // 이동할 아이템 위치를 기록
+        let itemRow = items[ fromIndexPath.row ]
+        
+        // 이동할 아이템을 삭제
+        items.remove(at: fromIndexPath.row)
+        // 삭제된 아이템을 이동할 위치로 삽입
+        items.insert(itemRow, at: to.row)
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.
