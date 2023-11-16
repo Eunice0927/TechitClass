@@ -71,7 +71,7 @@ class AttractionTableViewController: UITableViewController {
     // 섹션별 행의 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return attractionNames.count
     }
 
     // items 값을 셀에 추가
@@ -79,9 +79,10 @@ class AttractionTableViewController: UITableViewController {
         // 'AttractionTableCell' 부분은 스토리보드 화면에서 테이블 뷰 셀'Table View Cell' 의 Identifier 에 넣은 이름으로 채움
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttractionTableCell", for: indexPath) as! AttractionTableViewCell
 
+        let row = indexPath.row
         cell.attractionLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        cell.attractionLabel.text = items[indexPath.row]
-        cell.attractionImage.image = UIImage(systemName: "square.and.arrow.up")
+        cell.attractionLabel.text = attractionNames[row]
+        cell.attractionImage.image = UIImage(named: attractionImages[row])
 
         return cell
     }
