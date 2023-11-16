@@ -102,7 +102,10 @@ class AttractionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            items.remove(at: indexPath.row)
+            let row = indexPath.row
+            self.attractionNames.remove(at: row)
+            self.attractionImages.remove(at: row)
+            self.webAddresses.remove(at: row)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -120,12 +123,18 @@ class AttractionTableViewController: UITableViewController {
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         // 이동할 아이템 위치를 기록
-        let itemRow = items[ fromIndexPath.row ]
+        var row = fromIndexPath.row
         
         // 이동할 아이템을 삭제
-        items.remove(at: fromIndexPath.row)
+        let attractionName = self.attractionNames.remove(at: row)
+        let attractionImage = self.attractionImages.remove(at: row)
+        let webAddress = self.webAddresses.remove(at: row)
+        
         // 삭제된 아이템을 이동할 위치로 삽입
-        items.insert(itemRow, at: to.row)
+        row = to.row
+        self.attractionNames.insert(attractionName, at: row)
+        self.attractionImages.insert(attractionImage, at: row)
+        self.webAddresses.insert(webAddress, at: row)
     }
 
     /*
