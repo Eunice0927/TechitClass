@@ -77,7 +77,20 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
     // 결과 업데이트 대리자로 지정
     // 검색 창에 입력된 텍스트가 포함된 검색 컨트롤러 개체에 대한 참조가 전달됨.
     func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            matches.removeAll()
+            
+            for index in 0..<attractionNames.count {
+                if attractionNames[index].lowercased().contains(searchText.lowercased()) {
+                    matches.append(index)
+                }
+            }
+            searching = true
+        } else {
+            searching = false
+        }
         
+        tableView.reloadData()
     }
     
     // 뷰가 보일 때 마다 리스트의 데이터를 다시 불러옴
@@ -93,21 +106,26 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
         return 1
     }
 
-    // 섹션별 행의 개수
+    // 섹션별 행의 개수(검색 적용)
+    // 검색 모등에서 행 수는 일치한 배열의 항목 수에 따라 달라짐
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return attractionNames.count
+        return searching ? matches.count : attractionNames.count
     }
 
-    // items 값을 셀에 추가
+    // items 값을 셀에 추가(검색 적용)
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 'AttractionTableCell' 부분은 스토리보드 화면에서 테이블 뷰 셀'Table View Cell' 의 Identifier 에 넣은 이름으로 채움
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttractionTableCell", for: indexPath) as! AttractionTableViewCell
 
+        // 사용자가 현재 검색을 수행 중인 경우 matches 배열에 대한 인덱스 값에서 가져와야 함
         let row = indexPath.row
         cell.attractionLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        cell.attractionLabel.text = attractionNames[row]
-        cell.attractionImage.image = UIImage(named: attractionImages[row])
+        
+        cell.attractionLabel.text = searching ? attractionNames[ matches[row]] : attractionNames[row]
+        
+        let imageName = searching ? attractionImages[ matches[row]] : attractionImages[row]
+        cell.attractionImage.image = UIImage(named: imageName)
 
         return cell
     }
