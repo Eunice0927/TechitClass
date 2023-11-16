@@ -140,15 +140,28 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
     */
 
     
-    // 목록 삭제
+    // 목록 삭제(검색 적용중...)
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            
+            // 삭제할 아이템 위치를 기록
             let row = indexPath.row
-            self.attractionNames.remove(at: row)
-            self.attractionImages.remove(at: row)
-            self.webAddresses.remove(at: row)
+            print("삭제할 아이템 위치: \(row), \(matches[row])")
+            // 검색 적용
+            if self.searching {
+                self.attractionNames.remove(at: matches[row])
+                self.attractionImages.remove(at: matches[row])
+                self.webAddresses.remove(at: matches[row])
+                self.matches.remove(at: row)
+                self.updateSearchResults(for: searchController)
+                
+            } else {
+                self.attractionNames.remove(at: row)
+                self.attractionImages.remove(at: row)
+                self.webAddresses.remove(at: row)
+            }
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -191,6 +204,7 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
     
     // MARK: - Navigation
 
+    // (검색 적용)
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -202,7 +216,7 @@ class AttractionTableViewController: UITableViewController, UISearchBarDelegate,
             
             // 현재 테이블 뷰에 선택된 행의 순서를 가져옴
             let row = self.tableView.indexPathForSelectedRow!.row
-            detailView.webSite = webAddresses[row]
+            detailView.webSite = searching ? webAddresses[ matches[row]] : webAddresses[row]
         }
     }
     
