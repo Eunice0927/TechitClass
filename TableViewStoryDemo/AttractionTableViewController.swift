@@ -46,10 +46,11 @@ class AttractionTableViewController: UITableViewController {
     // items 값을 셀에 추가
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 'AttractionTableCell' 부분은 스토리보드 화면에서 테이블 뷰 셀'Table View Cell' 의 Identifier 에 넣은 이름으로 채움
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AttractionTableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AttractionTableCell", for: indexPath) as! AttractionTableViewCell
 
-        cell.textLabel?.text = items[indexPath.row]
-        cell.imageView?.image = UIImage(systemName: "square.and.arrow.up")
+        cell.attractionLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        cell.attractionLabel.text = items[indexPath.row]
+        cell.attractionImage.image = UIImage(systemName: "square.and.arrow.up")
 
         return cell
     }
