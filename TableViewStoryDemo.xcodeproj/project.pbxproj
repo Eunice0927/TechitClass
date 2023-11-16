@@ -15,6 +15,7 @@
 		DEC469E22B059C360037FA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC469E02B059C360037FA7C /* LaunchScreen.storyboard */; };
 		DEC469EA2B059DF30037FA7C /* AttractionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */; };
 		DEC46A0E2B05B53C0037FA7C /* AttractionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC46A0D2B05B53C0037FA7C /* AttractionTableViewCell.swift */; };
+		DEC46A102B05DDBE0037FA7C /* AttractionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC46A0F2B05DDBE0037FA7C /* AttractionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DEC469E32B059C360037FA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionTableViewController.swift; sourceTree = "<group>"; };
 		DEC46A0D2B05B53C0037FA7C /* AttractionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionTableViewCell.swift; sourceTree = "<group>"; };
+		DEC46A0F2B05DDBE0037FA7C /* AttractionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DEC469E02B059C360037FA7C /* LaunchScreen.storyboard */,
 				DEC469E32B059C360037FA7C /* Info.plist */,
 				DEC469E92B059DF30037FA7C /* AttractionTableViewController.swift */,
+				DEC46A0F2B05DDBE0037FA7C /* AttractionDetailViewController.swift */,
 			);
 			path = TableViewStoryDemo;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				DEC46A0E2B05B53C0037FA7C /* AttractionTableViewCell.swift in Sources */,
 				DEC469DA2B059C340037FA7C /* ViewController.swift in Sources */,
+				DEC46A102B05DDBE0037FA7C /* AttractionDetailViewController.swift in Sources */,
 				DEC469D62B059C340037FA7C /* AppDelegate.swift in Sources */,
 				DEC469EA2B059DF30037FA7C /* AttractionTableViewController.swift in Sources */,
 				DEC469D82B059C340037FA7C /* SceneDelegate.swift in Sources */,

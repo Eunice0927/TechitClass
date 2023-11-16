@@ -4,11 +4,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Attraction Table View Controller-->
+        <!--Attractions-->
         <scene sceneID="dBu-J3-iwj">
             <objects>
                 <tableViewController id="HEf-xe-xyT" customClass="AttractionTableViewController" customModule="TableViewStoryDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,21 +19,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttractionTableCell" id="521-Ns-c1b" customClass="AttractionTableViewCell" customModule="TableViewStoryDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="521-Ns-c1b" id="xJ6-lO-LZT">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDx-ea-k3E">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="aA2-LE-TRo"/>
                                                 <constraint firstAttribute="width" constant="150" id="l4o-Ul-1TS"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSI-24-eyx">
-                                            <rect key="frame" x="158" y="11.000000000000002" width="215" height="21.666666666666671"/>
+                                            <rect key="frame" x="158" y="11" width="215" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -51,6 +52,7 @@
                                 <connections>
                                     <outlet property="attractionImage" destination="hDx-ea-k3E" id="Lst-Hd-qQv"/>
                                     <outlet property="attractionLabel" destination="SSI-24-eyx" id="JTz-ZP-yee"/>
+                                    <segue destination="an9-6M-zdR" kind="show" identifier="ShowAttractionDetails" id="RAe-wb-O0a"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,7 +61,7 @@
                             <outlet property="delegate" destination="HEf-xe-xyT" id="E17-RC-L2h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5Ap-BH-sgJ"/>
+                    <navigationItem key="navigationItem" title="Attractions" id="5Ap-BH-sgJ"/>
                     <connections>
                         <outlet property="tvListView" destination="RBS-iv-h4T" id="rQa-QO-Mnj"/>
                     </connections>
@@ -67,6 +69,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmA-mz-Z5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2049.6183206106871" y="-32.394366197183103"/>
+        </scene>
+        <!--Attraction Details-->
+        <scene sceneID="VXh-Gv-Jag">
+            <objects>
+                <viewController id="an9-6M-zdR" customClass="AttractionDetailViewController" customModule="TableViewStoryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W1w-qK-5Ur">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLu-Iu-0oL">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jyL-xR-lna"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jyL-xR-lna" firstAttribute="trailing" secondItem="YLu-Iu-0oL" secondAttribute="trailing" id="9BB-Mh-skp"/>
+                            <constraint firstItem="YLu-Iu-0oL" firstAttribute="top" secondItem="jyL-xR-lna" secondAttribute="top" id="9qG-Rx-YFm"/>
+                            <constraint firstItem="jyL-xR-lna" firstAttribute="bottom" secondItem="YLu-Iu-0oL" secondAttribute="bottom" id="WCc-hc-P9c"/>
+                            <constraint firstItem="YLu-Iu-0oL" firstAttribute="leading" secondItem="jyL-xR-lna" secondAttribute="leading" id="qSm-bk-3wc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Attraction Details" id="Mzv-1t-6Bg"/>
+                    <connections>
+                        <outlet property="webView" destination="YLu-Iu-0oL" id="DSA-fv-DfT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdg-wo-BMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931" y="-22"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wCa-il-lEI">

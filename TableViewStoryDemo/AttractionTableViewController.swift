@@ -145,14 +145,23 @@ class AttractionTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // segue의 전환시 어느 화면으로 이동하는 건지 구분
+        if segue.identifier == "ShowAttractionDetails" {
+            let detailView = segue.destination as! AttractionDetailViewController
+            
+            // 현재 테이블 뷰에 선택된 행의 순서를 가져옴
+            let row = self.tableView.indexPathForSelectedRow!.row
+            detailView.webSite = webAddresses[row]
+        }
     }
-    */
+    
 
 }
