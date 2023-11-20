@@ -47,8 +47,16 @@ class ViewController: UIViewController {
         if let text = textBox?.text {
             let databuffer = text.data(using: String.Encoding.utf8)
             fileMgr.createFile(atPath: dataFile, contents: databuffer, attributes: nil)
-            print("저장성공!!")
+            
+            simpleAlert("저장성공!!")
         }
+    }
+    
+    // Alert 알림창
+    func simpleAlert(_ message: String) {
+        let alert = UIAlertController(title: "Save", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 }
