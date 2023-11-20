@@ -8,12 +8,40 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var textBox: UITextField!
+    
+    var fileMgr = FileManager.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        checkFile()
+    }
+    
+    // 사용자가 앱을 시작할 때마다 데이터 파일이 존재하는지 확인
+    // 파일이 존재하는 경우 앱에서 콘텐츠를 읽고 텍스트 필드에 표시
+    // - 사용자가 이전에 텍스트를 저장하지 않은 경우 파일이 생성되지 않음
+    func checkFile() {
+        
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        // 문서 디렉토리가 어디에 있는지 알고 나면 파일이 존재하는 확인하기 전에
+        // 파일(datafile.dat)의 전체(절대) 경로를 구성
+        let dataFile = dirPaths[0].appendingPathComponent("datafile.dat").path
+        
+        // 파일이 존재하는 경우 파일 내용을 읽고, 텍스트필드에 넣음
+        if fileMgr.fileExists(atPath: dataFile) {
+            
+            if let databuffer = fileMgr.contents(atPath: dataFile) {
+                let datastring = NSString(data: databuffer, encoding: String.Encoding.utf8.rawValue)
+                textBox.text = datastring as String?
+            }
+        }
     }
 
-
+    @IBAction func saveText(_ sender: Any) {
+    }
+    
 }
 
