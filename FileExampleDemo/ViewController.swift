@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var textBox: UITextField!
     
     var fileMgr = FileManager.default
+    var dataFile: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
         
         // 문서 디렉토리가 어디에 있는지 알고 나면 파일이 존재하는 확인하기 전에
         // 파일(datafile.dat)의 전체(절대) 경로를 구성
-        let dataFile = dirPaths[0].appendingPathComponent("datafile.dat").path
+        dataFile = dirPaths[0].appendingPathComponent("datafile.dat").path
         
         // 파일이 존재하는 경우 파일 내용을 읽고, 텍스트필드에 넣음
         if fileMgr.fileExists(atPath: dataFile) {
@@ -41,6 +42,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveText(_ sender: Any) {
+        // 텍스트필드 객체의 텍스트를 변환하고 이를 Data 객체에 할당
+        // 그 내용을 파일 관리자 객채의 createFile() 메서드를 호출하여 파일에 기록
+        if let text = textBox?.text {
+            let databuffer = text.data(using: String.Encoding.utf8)
+            fileMgr.createFile(atPath: dataFile, contents: databuffer, attributes: nil)
+            print("저장성공!!")
+        }
     }
     
 }
