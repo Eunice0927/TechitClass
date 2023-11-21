@@ -18,7 +18,31 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        checkFile()
-        ex_02()
+        ex_03()
+    }
+    
+    func ex_03() {
+        let fileManager = FileManager.default
+        
+        do {
+            let documentPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0].path
+            let sourceFile = documentPath + "/" + "datafile.dat"
+            let destinationFile = documentPath + "/" + "reversed.txt"
+            
+            // 텍스트를 역순으로 바꾸어 저장하는 코드
+            let data = try Data(contentsOf: URL(fileURLWithPath: sourceFile))
+            if let text = String(data: data, encoding: .utf8) {
+                let reversedText = String(text.reversed())
+                if let reverseData = reversedText.data(using: .utf8) {
+                    try reverseData.write(to: URL(fileURLWithPath: destinationFile))
+                }
+            }
+            
+            // 변경된 파일 확인
+                       
+        } catch {
+            print(error)
+        }
     }
     
     func ex_02() {
