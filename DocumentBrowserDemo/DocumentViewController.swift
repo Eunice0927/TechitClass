@@ -7,30 +7,35 @@
 
 import UIKit
 
-class DocumentViewController: UIDocumentViewController {
+class DocumentViewController: UIViewController {
 
     @IBOutlet weak var documentNameLabel: UILabel!
-
+    @IBOutlet var documentText: UITextView!
+    
+    var document: Document?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateViewsIfNecessary()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        document?.open(completionHandler: { (success) in
+            if success {
+                self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
+                self.documentText.text = self.document?.userText
+            } else {
+                
+            }
+        })
     }
 
-    override func documentDidOpen() {
-        super.documentDidOpen()
-        self.updateViewsIfNecessary()
-    }
-
-    func updateViewsIfNecessary() {
-        // Check if the document is open and the view is loaded
-        guard let document, !document.documentState.contains(.closed) else { return }
-        guard isViewLoaded else { return }
-
-        // Display the content of the document, e.g.:
-        self.documentNameLabel.text = document.localizedName
-    }
 
     @IBAction func dismissDocumentViewController() {
         dismiss(animated: true)
+    }
+    
+    @IBAction func saveFile(_ sender: Any) {
     }
 }
