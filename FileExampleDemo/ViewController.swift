@@ -17,7 +17,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkFile()
+//        checkFile()
+        ex_01()
+    }
+    
+    func ex_01() {
+        let fileManager = FileManager.default
+        let currentPath = fileManager.currentDirectoryPath
+        print(currentPath)
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: currentPath)
+            for file in files.sorted() {
+                // 파일 이름과 크기를 출력
+                let filePath = currentPath + "/" + file
+                if let attribs = try? fileManager.attributesOfItem(atPath: filePath),
+                   let fileSize = attribs[.size] as? UInt64 {
+                    print("\(file): \(fileSize) bytes")
+                }
+                
+            }
+        } catch {
+            print(error)
+        }
     }
     
     // 사용자가 앱을 시작할 때마다 데이터 파일이 존재하는지 확인
