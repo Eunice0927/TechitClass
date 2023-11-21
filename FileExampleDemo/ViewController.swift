@@ -18,7 +18,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        checkFile()
-        ex_01()
+        ex_02()
+    }
+    
+    func ex_02() {
+        let fileManager = FileManager.default
+        
+        do {
+            let sourcePath = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0].path
+            let destinationPath = sourcePath + "/" + "Backup"
+            print(sourcePath)
+            print(destinationPath)
+            
+            try fileManager.createDirectory(atPath: destinationPath, withIntermediateDirectories: true)
+            let files = try fileManager.contentsOfDirectory(atPath: sourcePath)
+            for file in files {
+                // 파일을 복사
+                let filePath = sourcePath + "/" + file
+                let fileExtension = (file as NSString).pathExtension.lowercased()
+                if fileExtension == "dat" {
+                    let destinationFilePath = destinationPath + "/" + file
+                    try fileManager.copyItem(atPath: filePath, toPath: destinationFilePath)
+                }
+            }
+        } catch {
+            print(error)
+        }
     }
     
     func ex_01() {
