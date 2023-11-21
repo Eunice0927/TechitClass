@@ -18,7 +18,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        checkFile()
-        ex_03()
+        ex_04()
+    }
+    
+    func ex_04() {
+        let fileManager = FileManager.default
+        
+        do {
+            let documentPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0].path
+            let sourceFile = documentPath + "/" + "datafile.dat"
+            let destinationFile = documentPath + "/" + "summary.txt"
+            
+            // 숫자들의 합계와 평균을 구하고 저장하는 코드
+            let data = try Data(contentsOf: URL(fileURLWithPath: sourceFile))
+            if let text = String(data: data, encoding: .utf8) {
+                
+                let numbers = text.split(separator: ",").compactMap { Int($0) }
+                let sum = numbers.reduce(0, +)
+                let average = Double(sum) / Double(numbers.count)
+                let summary = "합계: \(sum)\n평균: \(average)"
+                
+                if let summaryData = summary.data(using: .utf8) {
+                    try summaryData.write(to: URL(fileURLWithPath: destinationFile))
+                }
+            }
+            
+            // 변경된 파일 확인
+            
+        } catch {
+            print(error)
+        }
     }
     
     func ex_03() {
