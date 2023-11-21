@@ -14,6 +14,7 @@
 		DE0C1DBD2B0C520000FC2FEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0C1DBB2B0C520000FC2FEF /* Main.storyboard */; };
 		DE0C1DBF2B0C520300FC2FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0C1DBE2B0C520300FC2FEF /* Assets.xcassets */; };
 		DE0C1DC22B0C520300FC2FEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0C1DC02B0C520300FC2FEF /* LaunchScreen.storyboard */; };
+		DE0C1DCA2B0C6ADC00FC2FEF /* template.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE0C1DC92B0C6ADC00FC2FEF /* template.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DE0C1DBE2B0C520300FC2FEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE0C1DC12B0C520300FC2FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE0C1DC32B0C520300FC2FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0C1DC92B0C6ADC00FC2FEF /* template.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DE0C1DB72B0C520000FC2FEF /* DocumentViewController.swift */,
 				DE0C1DB92B0C520000FC2FEF /* Document.swift */,
 				DE0C1DBB2B0C520000FC2FEF /* Main.storyboard */,
+				DE0C1DC92B0C6ADC00FC2FEF /* template.txt */,
 				DE0C1DBE2B0C520300FC2FEF /* Assets.xcassets */,
 				DE0C1DC02B0C520300FC2FEF /* LaunchScreen.storyboard */,
 				DE0C1DC32B0C520300FC2FEF /* Info.plist */,
@@ -130,6 +133,7 @@
 			files = (
 				DE0C1DC22B0C520300FC2FEF /* LaunchScreen.storyboard in Resources */,
 				DE0C1DBF2B0C520300FC2FEF /* Assets.xcassets in Resources */,
+				DE0C1DCA2B0C6ADC00FC2FEF /* template.txt in Resources */,
 				DE0C1DBD2B0C520000FC2FEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
