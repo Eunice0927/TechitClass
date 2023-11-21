@@ -37,5 +37,18 @@ class DocumentViewController: UIViewController {
     }
     
     @IBAction func saveFile(_ sender: Any) {
+        document?.userText = documentText.text
+        
+        if let url = document?.fileURL {
+            document?.save(to: url, for: .forOverwriting, completionHandler: { (success) in
+                if success {
+                    print("File save OK!")
+                } else {
+                    print("File save failed!")
+                }
+            })
+        } // end if
     }
+    
+    
 }
