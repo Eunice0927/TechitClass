@@ -45,6 +45,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveContact(_ sender: Any) {
+        let contactDB = FMDatabase(path: databasePath)
+        
+        if contactDB.open() {
+            let sql = "insert into contacts (name, address, phone) values ('\(name.text ?? "")', '\(address.text ?? "")','\(phone.text ?? "")')"
+            
+            do {
+                try contactDB.executeUpdate(sql, values: nil)
+            } catch {
+                status.text = "contact 추가 실패!!"
+            }
+            
+            status.text = "Contact Added"
+            name.text = ""
+            address.text = ""
+            phone.text = ""
+            
+            contactDB.close()
+        } else {
+            status.text = "DB 열기 오류발생"
+            print("Error: \(contactDB.lastErrorMessage())")
+        }
     }
     
     @IBAction func findContact(_ sender: Any) {
