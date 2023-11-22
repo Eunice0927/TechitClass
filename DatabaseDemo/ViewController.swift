@@ -45,46 +45,85 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveContact(_ sender: Any) {
-        let contactDB = FMDatabase(path: databasePath)
         
-        if contactDB.open() {
-            let sql = "insert into contacts (name, address, phone) values ('\(name.text ?? "")', '\(address.text ?? "")','\(phone.text ?? "")')"
-            
-            do {
-                try contactDB.executeUpdate(sql, values: nil)
-            } catch {
-                status.text = "contact 추가 실패!!"
-            }
-            
-            status.text = "Contact Added"
+        let newContact = Contact(id: 0, name: name.text, address: address.text, phone: phone.text)
+        let (success, message) = Contact.save(contact: newContact, databasePath: databasePath)
+        
+        status.text = message
+        
+        if success {
             name.text = ""
             address.text = ""
             phone.text = ""
-            
-            contactDB.close()
-        } else {
-            status.text = "DB 열기 오류발생"
-            print("Error: \(contactDB.lastErrorMessage())")
         }
     }
     
     @IBAction func findContact(_ sender: Any) {
+        
+        let items = Contact.findName(name: name.text ?? "", databasePath: databasePath)
+        
+        if items.count > 0 {
+            let item = items[0]
+            address.text = item.address
+            phone.text = item.phone
+            status.text = "Record Found"
+        } else {
+            status.text = "Record Not Found"
+            address.text = ""
+            phone.text = ""
+        }
+        
+        for i in items {
+            print("\(i.address ?? ""), \(i.phone ?? "")" )
+        }
+    }
+    
+}
+
+struct Contact {
+    let id: Int?
+    let name: String?
+    let address: String?
+    let phone: String?
+    
+    static func save(contact: Contact, databasePath: String) -> (success: Bool, message: String) {
         let contactDB = FMDatabase(path: databasePath)
         
         if contactDB.open() {
-            let sql = "select address, phone from contacts where name='\(name.text ?? "")'"
+            let sql = "insert into contacts (name, address, phone) values ('\(contact.name ?? "")', '\(contact.address ?? "")','\(contact.phone ?? "")')"
+            
+            do {
+                try contactDB.executeUpdate(sql, values: nil)
+            } catch {
+                return (false, "contact 추가 실패!!")
+            }
+            
+            contactDB.close()
+        } else {
+            print("Error: \(contactDB.lastErrorMessage())")
+            return (false, "DB 열기 오류발생")
+        }
+        
+        return (true, "Contact Added")
+    }
+    
+    static func findName(name: String, databasePath: String) -> [Contact] {
+        let contactDB = FMDatabase(path: databasePath)
+        var items = [Contact]()
+        
+        if contactDB.open() {
+            let sql = "select id, name, address, phone from contacts where name='\(name)'"
             
             do {
                 let results: FMResultSet? = try contactDB.executeQuery(sql, values: nil)
                 
-                if results?.next() == true {
-                    address.text = results?.string(forColumn: "address")
-                    phone.text = results?.string(forColumn: "phone")
-                    status.text = "Record Found"
-                } else {
-                    status.text = "Record Not Found"
-                    address.text = ""
-                    phone.text = ""
+                while results?.next() == true {
+                    let id = results?.int(forColumn: "id") ?? 0
+                    let name = results?.string(forColumn: "name") ?? ""
+                    let address = results?.string(forColumn: "address") ?? ""
+                    let phone = results?.string(forColumn: "phone") ?? ""
+                    
+                    items.append(Contact(id: Int(id), name: name, address: address, phone: phone))
                 }
                 
             } catch {
@@ -96,7 +135,8 @@ class ViewController: UIViewController {
         } else {
             print("Error: \(contactDB.lastErrorMessage())")
         }
+        
+        return items
     }
-    
 }
 
