@@ -69,6 +69,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func findContact(_ sender: Any) {
+        let contactDB = FMDatabase(path: databasePath)
+        
+        if contactDB.open() {
+            let sql = "select address, phone from contacts where name='\(name.text ?? "")'"
+            
+            do {
+                let results: FMResultSet? = try contactDB.executeQuery(sql, values: nil)
+                
+                if results?.next() == true {
+                    address.text = results?.string(forColumn: "address")
+                    phone.text = results?.string(forColumn: "phone")
+                    status.text = "Record Found"
+                } else {
+                    status.text = "Record Not Found"
+                    address.text = ""
+                    phone.text = ""
+                }
+                
+            } catch {
+                print("Error: \(contactDB.lastErrorMessage())")
+            }
+            
+            contactDB.close()
+            
+        } else {
+            print("Error: \(contactDB.lastErrorMessage())")
+        }
     }
     
 }
