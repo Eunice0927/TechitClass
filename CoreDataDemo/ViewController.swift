@@ -36,6 +36,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveContact(_ sender: Any) {
+        if let context = self.manageObjectContext, let entityDescription = NSEntityDescription.entity(forEntityName: "Contacts", in: context) {
+            
+            let contact = Contacts(entity: entityDescription, insertInto: manageObjectContext)
+            
+            contact.name = name.text
+            contact.address = address.text
+            contact.phone = phone.text
+            
+            do {
+                try manageObjectContext?.save()
+                
+                name.text = ""
+                address.text = ""
+                phone.text = ""
+                status.text = "Contact Added"
+            } catch let error {
+                status.text = error.localizedDescription
+            }
+            
+        }
     }
     
     @IBAction func findContact(_ sender: Any) {
