@@ -59,6 +59,34 @@ class ViewController: UIViewController {
     }
     
     @IBAction func findContact(_ sender: Any) {
+        if let context = self.manageObjectContext, let entityDescription = NSEntityDescription.entity(forEntityName: "Contacts", in: context) {
+            
+            let request: NSFetchRequest<Contacts> = Contacts.fetchRequest()
+            request.entity = entityDescription
+            
+            if let name = name.text {
+                let pred = NSPredicate(format: "(name = %@)", name)
+                request.predicate = pred
+            }
+            
+            do {
+                let results = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
+                
+                if results.count > 0 {
+                    let match = results[0] as! NSManagedObject
+                    
+                    name.text = match.value(forKey: "name") as? String
+                    address.text = match.value(forKey: "address") as? String
+                    phone.text = match.value(forKey: "phone") as? String
+                    status.text = "Sucess Find : \(results.count)"
+                } else {
+                    status.text = "Fail Find"
+                }
+            } catch let error {
+                status.text = error.localizedDescription
+            }
+            
+        }
     }
 }
 
