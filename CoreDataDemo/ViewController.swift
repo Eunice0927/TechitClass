@@ -61,17 +61,19 @@ class ViewController: UIViewController {
     @IBAction func findContact(_ sender: Any) {
         if let context = self.manageObjectContext, let entityDescription = NSEntityDescription.entity(forEntityName: "Contacts", in: context) {
             
+            // 사용자가 지정한 이름을 가진 객체만 저장소에서 검색되도록 보장하는 조건자를 제작
             let request: NSFetchRequest<Contacts> = Contacts.fetchRequest()
             request.entity = entityDescription
             
             if let name = name.text {
-                let pred = NSPredicate(format: "(name = %@)", name)
+                let pred = NSPredicate(format: "(name LIKE %@)", "*\(name)*")
                 request.predicate = pred
             }
             
             do {
                 let results = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
                 
+                // 검색된 관리 개체의 데이터 액세스
                 if results.count > 0 {
                     let match = results[0] as! NSManagedObject
                     
