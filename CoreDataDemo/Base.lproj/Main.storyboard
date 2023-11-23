@@ -75,6 +75,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iEi-dC-VPm">
+                                <rect key="frame" x="64" y="602" width="265" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="WjS-Js-o7T"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UR-9C-RuA">
+                                <rect key="frame" x="249" y="551" width="80" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Find All"/>
+                                <connections>
+                                    <action selector="findAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Alc-C2-yDy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -84,10 +102,13 @@
                             <constraint firstItem="a24-uk-aTa" firstAttribute="leading" secondItem="6nN-PR-Irr" secondAttribute="trailing" constant="32" id="6T2-OE-ewt"/>
                             <constraint firstItem="pHI-IC-sYd" firstAttribute="trailing" secondItem="a24-uk-aTa" secondAttribute="trailing" id="CAK-Of-R5h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a24-uk-aTa" secondAttribute="trailing" constant="64" id="FD1-u2-Sug"/>
+                            <constraint firstItem="iEi-dC-VPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="JmB-2Y-chB"/>
                             <constraint firstItem="c5G-Bw-dsU" firstAttribute="firstBaseline" secondItem="BmT-fT-wgJ" secondAttribute="firstBaseline" id="Kjz-UU-wlr"/>
                             <constraint firstItem="6nN-PR-Irr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="LOx-8B-Roa"/>
                             <constraint firstItem="cCv-kB-6nn" firstAttribute="firstBaseline" secondItem="49X-IK-GOH" secondAttribute="firstBaseline" id="QBi-KV-uDK"/>
                             <constraint firstItem="pHI-IC-sYd" firstAttribute="firstBaseline" secondItem="dw4-ir-CA2" secondAttribute="firstBaseline" id="RDP-U3-8zQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iEi-dC-VPm" secondAttribute="trailing" constant="64" id="UTS-mE-G8R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iEi-dC-VPm" secondAttribute="bottom" constant="16" id="UdJ-qo-NXh"/>
                             <constraint firstItem="cCv-kB-6nn" firstAttribute="trailing" secondItem="a24-uk-aTa" secondAttribute="trailing" id="Uib-VB-JNF"/>
                             <constraint firstItem="c5G-Bw-dsU" firstAttribute="leading" secondItem="a24-uk-aTa" secondAttribute="leading" id="bsL-QR-eRQ"/>
                             <constraint firstItem="mB9-7C-yuH" firstAttribute="top" secondItem="c5G-Bw-dsU" secondAttribute="bottom" constant="32" id="cU6-7a-giI"/>
@@ -96,8 +117,10 @@
                             <constraint firstItem="BmT-fT-wgJ" firstAttribute="leading" secondItem="6nN-PR-Irr" secondAttribute="leading" id="fiY-uz-OBO"/>
                             <constraint firstItem="cCv-kB-6nn" firstAttribute="leading" secondItem="a24-uk-aTa" secondAttribute="leading" id="igW-4L-tsD"/>
                             <constraint firstItem="BmT-fT-wgJ" firstAttribute="top" secondItem="49X-IK-GOH" secondAttribute="bottom" constant="32" id="mHC-1K-4u1"/>
+                            <constraint firstItem="iEi-dC-VPm" firstAttribute="top" secondItem="1UR-9C-RuA" secondAttribute="bottom" constant="16" id="oxf-yf-kKi"/>
                             <constraint firstItem="6nN-PR-Irr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="pJv-Ur-eFU"/>
                             <constraint firstItem="c5G-Bw-dsU" firstAttribute="trailing" secondItem="a24-uk-aTa" secondAttribute="trailing" id="qCb-ye-Awb"/>
+                            <constraint firstItem="iEi-dC-VPm" firstAttribute="trailing" secondItem="1UR-9C-RuA" secondAttribute="trailing" id="ryG-Ny-aVc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mB9-7C-yuH" secondAttribute="trailing" constant="64" id="wgX-SQ-zJx"/>
                             <constraint firstItem="mB9-7C-yuH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="xKD-Rq-86q"/>
                             <constraint firstItem="49X-IK-GOH" firstAttribute="top" secondItem="6nN-PR-Irr" secondAttribute="bottom" constant="32" id="z1y-0C-b3Q"/>
@@ -105,6 +128,7 @@
                     </view>
                     <connections>
                         <outlet property="address" destination="cCv-kB-6nn" id="f05-Vz-dgm"/>
+                        <outlet property="findResultText" destination="iEi-dC-VPm" id="7H4-AP-x0Y"/>
                         <outlet property="name" destination="a24-uk-aTa" id="xQs-Fb-Maz"/>
                         <outlet property="phone" destination="c5G-Bw-dsU" id="dte-0g-Lqc"/>
                         <outlet property="status" destination="mB9-7C-yuH" id="f0f-VG-fPI"/>
@@ -116,6 +140,12 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

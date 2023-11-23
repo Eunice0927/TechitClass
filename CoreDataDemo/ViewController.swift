@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet var phone: UITextField!
     @IBOutlet var status: UILabel!
     
+    @IBOutlet var findResultText: UITextView!
+    
     // 관리 객체 컨텍스트 객체에 대한 참조를 저장할 변수를 선언
     var manageObjectContext: NSManagedObjectContext?
     
@@ -81,8 +83,9 @@ class ViewController: UIViewController {
                     address.text = match.value(forKey: "address") as? String
                     phone.text = match.value(forKey: "phone") as? String
                     status.text = "Sucess Find : \(results.count)"
+
                 } else {
-                    status.text = "Fail Find"
+                    status.text = "Fail Find : \(results.count)"
                 }
             } catch let error {
                 status.text = error.localizedDescription
@@ -90,5 +93,36 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func findAll(_ sender: Any) {
+        if let context = self.manageObjectContext, let _ = NSEntityDescription.entity(forEntityName: "Contacts", in: context) {
+            
+            let request = Contacts.fetchRequest() as NSFetchRequest<Contacts>
+            
+            var resultStr = ""
+            do {
+                let results = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
+                
+                // 검색된 관리 개체의 데이터 액세스
+                for item  in results {
+                    print( (item as! Contacts).name ?? "")
+                    let match = item as! NSManagedObject
+                    
+                    let name = match.value(forKey: "name") as? String
+                    let address = match.value(forKey: "address") as? String
+                    let phone = match.value(forKey: "phone") as? String
+                    
+                    let str = "\(name ?? ""), \(address ?? ""), \(phone ?? "")"
+                    resultStr += str + "\n"
+                }
+
+            } catch let error {
+                status.text = error.localizedDescription
+            }
+            findResultText.text = resultStr
+        }
+
+    }
+    
 }
 
