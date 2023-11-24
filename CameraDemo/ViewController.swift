@@ -73,7 +73,10 @@ class ViewController: UIViewController,
             imageView.image = image
             
             if (newMeida == true) {
-                UIImageWriteToSavedPhotosAlbum(image, self, #selector(ViewController.image(image:didFinishSavingWithError:contextInfo:)), nil)
+                UIImageWriteToSavedPhotosAlbum(image, self, nil, nil)
+                
+                // 오류가 발생하면 경고 상자를 통해 사용자에게 보고하고 싶은 경우
+                // UIImageWriteToSavedPhotosAlbum(image, self, #selector(ViewController.image(image:didFinishSavingWithError:contextInfo:)), nil)
             }
             
         }
@@ -84,7 +87,14 @@ class ViewController: UIViewController,
                      didFinishSavingWithError error: NSErrorPointer,
                      contextInfo: UnsafeRawPointer) {
         if error != nil {
-            print("error")
+            let alert = UIAlertController(title: "Save Failed",
+                                          message: "Failed to save image",
+                                          preferredStyle: .alert) // UIAlertController.Style.alert
+            let cancelAction = UIAlertAction(title: "OK",
+                                             style: .cancel,
+                                             handler: nil)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
         }
 
     }
