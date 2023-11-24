@@ -10,6 +10,9 @@ import UIKit
 import MobileCoreServices
 import UniformTypeIdentifiers
 
+import AVKit
+import AVFoundation
+
 class ViewController: UIViewController,
                         UIImagePickerControllerDelegate,
                         UINavigationControllerDelegate {
@@ -101,6 +104,16 @@ class ViewController: UIViewController,
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination as! AVPlayerViewController
+        let url = URL(string: "https://www.ebookfrenzy.com/ios_book/movie/movie.mov")
+        
+        if let movieURL = url {
+            dest.player = AVPlayer(url: movieURL)
+        }
     }
     
 }
