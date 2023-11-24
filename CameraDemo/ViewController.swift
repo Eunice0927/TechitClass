@@ -7,9 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import MobileCoreServices
+import UniformTypeIdentifiers
+
+class ViewController: UIViewController,
+                        UIImagePickerControllerDelegate,
+                        UINavigationControllerDelegate {
 
     @IBOutlet var imageView: UIImageView!
+    
+    // 뒷 부분에서 필요할 Boolean 속성 선언
+    var newMeida: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +25,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func useCamera(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            
+            let imagePicker = UIImagePickerController()
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.mediaTypes = [UTType.image.identifier]
+            imagePicker.allowsEditing = false
+
+            self.present(imagePicker, animated: true, completion: nil)
+            
+            newMeida = true
+        }
+        
     }
     
     @IBAction func useCameraRoll(_ sender: Any) {
