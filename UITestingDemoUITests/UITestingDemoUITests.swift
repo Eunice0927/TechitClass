@@ -24,7 +24,7 @@ final class UITestingDemoUITests: XCTestCase {
         let welcome = app.staticTexts.element
         
         XCTAssert(welcome.exists)
-        XCTAssertEqual(welcome.label, "Welcom!")
+        XCTAssertEqual(welcome.label, "Welcome!")
     }
     
     // 로그인 버튼 테스트
@@ -168,6 +168,20 @@ final class UITestingDemoUITests: XCTestCase {
         XCTAssertEqual(app.buttons["loginButton"].label, "Login")
         try login()
         XCTAssertEqual(app.buttons["loginButton"].label, "Logout")
+    }
+    
+    // 로그아웃 테스트
+    // 로그아웃 후 ContentView(첫 화면)의 사용자 인터페이스가 제대로 업데이트 되는지 확인
+    func testLogout() throws {
+        try login()
+        
+        XCTAssert(app.staticTexts["Welcome test!"].exists)
+        XCTAssertEqual(app.buttons["loginButton"].label, "Logout")
+        
+        app.buttons["loginButton"].tap()
+        
+        XCTAssert(app.staticTexts["Welcome!"].exists)
+        XCTAssertEqual(app.buttons["loginButton"].label, "Login")
     }
     
     func testLaunchPerformance() throws {
