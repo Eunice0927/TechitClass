@@ -10,16 +10,23 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var showLogin = false
+    // LoginView 에서 했던 것처럼 사용자 EnvironmentObject 속성을 선언
+    @EnvironmentObject private var user: User
     
     var body: some View {
         VStack {
-            Text("Welcom!")
-                .font(.title)
+            Text( !user.isLoggedin ? "Welcome!" : "Welcome \(user.username)!")
+            
+            Spacer().frame(height:20)
             
             Button {
-                showLogin = true
+                if !user.isLoggedin {
+                    showLogin = true
+                } else {
+                    user.logout()
+                }
             } label: {
-                Text("Login")
+                Text( !user.isLoggedin ? "Login" : "Logout")
             }
             // 식별자 추가
             .accessibilityIdentifier("loginButton")

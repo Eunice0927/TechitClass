@@ -136,6 +136,39 @@ final class UITestingDemoUITests: XCTestCase {
         XCTAssertFalse(app.alerts.element.waitForExistence(timeout: 0.5))
     }
     
+    // 반복적으로 필요한 로그인 작업을 함수화
+    func login() throws {
+        app.buttons["loginButton"].tap()
+        
+        let username = app.textFields["Username"]
+        username.tap()
+        username.typeText("test")
+        
+        let password = app.secureTextFields["Password"]
+        password.tap()
+        password.typeText("pass")
+        app.keyboards.buttons["Return"].tap()
+        
+        app.buttons["loginNow"].tap()
+    }
+    
+    // 환영 메세지 및 로그인 버튼 라벨 테스트
+    // "Welcome test!" 표시되면 테스트가 성공
+    func testWelcomeAfterLogin() throws {
+        XCTAssert(app.staticTexts["Welcome!"].exists)
+        
+        try login()
+        
+        XCTAssert(app.staticTexts["Welcome test!"].exists)
+        XCTAssertFalse(app.staticTexts["Welcome!"].exists)
+    }
+    
+    // 로그인 버튼의 라벨을 확인하기 위한 테스트
+    func testLoginLogouLabel() throws {
+        XCTAssertEqual(app.buttons["loginButton"].label, "Login")
+        try login()
+        XCTAssertEqual(app.buttons["loginButton"].label, "Logout")
+    }
     
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
