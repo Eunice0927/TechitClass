@@ -125,6 +125,17 @@ final class UITestingDemoUITests: XCTestCase {
         XCTAssertFalse(login.waitForExistence(timeout: 0.5))
     }
     
+    // 로그인 실패 테스트
+    func testFailedLoginAlert() throws {
+        app.buttons["loginButton"].tap()
+        app.buttons["loginNow"].tap()
+        
+        XCTAssert(app.alerts.element.waitForExistence(timeout: 0.5))
+        
+        app.alerts.element.buttons["OK"].tap()
+        XCTAssertFalse(app.alerts.element.waitForExistence(timeout: 0.5))
+    }
+    
     
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

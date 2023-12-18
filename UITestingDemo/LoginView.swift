@@ -12,6 +12,8 @@ struct LoginView: View {
     @EnvironmentObject private var user: User
     // 나중에 시트를 닫을 수 있도록 Environment 속성을 선언
     @Environment(\.presentationMode) var presentationMode
+    // 경고 표시 상태 속성을 선언
+    @State private var showAlert = false
     
     var body: some View {
         NavigationStack {
@@ -25,6 +27,8 @@ struct LoginView: View {
                     if user.login() {
                         // 로그인이 성공하면 로그인 시트 닫기
                         presentationMode.wrappedValue.dismiss()
+                    } else {
+                        showAlert = true
                     }
                 } label: {
                     Text("Login")
@@ -40,6 +44,13 @@ struct LoginView: View {
                 Image(systemName: "xmark.circle")
                     .accessibilityLabel("Dismiss")
             })
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Login Failed"),
+                message: Text("사용자이름, 패스워드가 일치하지 않습니다."),
+                      dismissButton: Alert.Button.default(Text("OK"), action: {
+                    showAlert = false
+                }) )
+            }
         }
     }
 }
