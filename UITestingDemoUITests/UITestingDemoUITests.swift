@@ -91,6 +91,21 @@ final class UITestingDemoUITests: XCTestCase {
         XCTAssertNotEqual(username.value as! String, "")
     }
     
+    // 비밀번호 입력 테스트
+    // 텍스트 입력을 제공하는 다른 방법 - 키보드 탭 동작을 시뮬레이션
+    func testPassword() throws {
+        app.buttons["loginButton"].tap()
+        
+        app.secureTextFields.element.tap()
+        app.keys["p"].tap()
+        app.keys["a"].tap()
+        app.keys["s"].tap()
+        app.keys["s"].tap()
+        app.keyboards.buttons["Return"].tap()
+        
+        XCTAssertNotEqual(app.secureTextFields.element.value as! String, "")
+    }
+    
     
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
