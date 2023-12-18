@@ -78,7 +78,20 @@ final class UITestingDemoUITests: XCTestCase {
         
         XCTAssertFalse(dismiss.waitForExistence(timeout: 0.5))
     }
-
+    
+    // 사용자 이름 테스트
+    // 프로그래밍 방식으로 텍스트 필드에 텍스트를 입력
+    func testUsername() throws {
+        app.buttons["loginButton"].tap()
+        
+        let username = app.textFields["Username"]
+        username.tap()
+        username.typeText("test")
+        
+        XCTAssertNotEqual(username.value as! String, "")
+    }
+    
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
