@@ -55,6 +55,7 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView()
-}
+//#Preview {
+//    LoginView()
+//        .environmentObject(User())
+//}
