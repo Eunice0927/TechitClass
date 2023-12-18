@@ -14,6 +14,7 @@
 		DE2B14302B2FCDAD00566C6D /* UITestingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B142F2B2FCDAD00566C6D /* UITestingDemoTests.swift */; };
 		DE2B143A2B2FCDAE00566C6D /* UITestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B14392B2FCDAE00566C6D /* UITestingDemoUITests.swift */; };
 		DE2B143C2B2FCDAE00566C6D /* UITestingDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B143B2B2FCDAE00566C6D /* UITestingDemoUITestsLaunchTests.swift */; };
+		DE2B14492B2FE24D00566C6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B14482B2FE24D00566C6D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		DE2B14352B2FCDAE00566C6D /* UITestingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITestingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2B14392B2FCDAE00566C6D /* UITestingDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingDemoUITests.swift; sourceTree = "<group>"; };
 		DE2B143B2B2FCDAE00566C6D /* UITestingDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DE2B14482B2FE24D00566C6D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		DE2B141D2B2FCDAB00566C6D /* UITestingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DE2B14482B2FE24D00566C6D /* User.swift */,
 				DE2B141E2B2FCDAB00566C6D /* UITestingDemoApp.swift */,
 				DE2B14202B2FCDAB00566C6D /* ContentView.swift */,
 				DE2B14222B2FCDAD00566C6D /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			files = (
 				DE2B14212B2FCDAB00566C6D /* ContentView.swift in Sources */,
 				DE2B141F2B2FCDAB00566C6D /* UITestingDemoApp.swift in Sources */,
+				DE2B14492B2FE24D00566C6D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
