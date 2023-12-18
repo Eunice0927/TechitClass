@@ -37,6 +37,16 @@ final class UITestingDemoUITests: XCTestCase {
         // 라벨이 의도적으로 또는 실수로 변경되었는지 확인
         XCTAssertEqual(login.label, "Login")
     }
+    
+    // 로그인 폼 테스트
+    func testLoginFormApperance() throws {
+        // 로그인 버튼에 대한 탭 동작을 트리거
+        app.buttons["loginButton"].tap()
+        // app 속성을 통해 네비게이션바 타이틀 "Login" 제목을 가져옴
+        let loginNavBarTitle = app.staticTexts["Login"]
+        // 0.5초 동안 나타나기를 기다림
+        XCTAssert(loginNavBarTitle.waitForExistence(timeout: 0.5))
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
