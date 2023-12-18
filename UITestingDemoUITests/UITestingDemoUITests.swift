@@ -47,6 +47,26 @@ final class UITestingDemoUITests: XCTestCase {
         // 0.5초 동안 나타나기를 기다림
         XCTAssert(loginNavBarTitle.waitForExistence(timeout: 0.5))
     }
+    
+    // 로그인 폼의 모든 요소 출력에 대한 테스트
+    func testLoginForm() throws {
+        app.buttons["loginButton"].tap()
+        
+        let navBar = app.navigationBars.element
+        XCTAssert(navBar.exists)
+        
+        let username = app.textFields["Username"]
+        XCTAssert(username.exists)
+        
+        let password = app.secureTextFields["Password"]
+        XCTAssert(password.exists)
+        
+        let login = app.buttons["loginNow"]
+        XCTAssert(login.exists)
+        
+        let dismiss = app.buttons["Dismiss"]
+        XCTAssert(dismiss.exists)
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
