@@ -106,6 +106,25 @@ final class UITestingDemoUITests: XCTestCase {
         XCTAssertNotEqual(app.secureTextFields.element.value as! String, "")
     }
     
+    // 로그인 프로세스를 테스트
+    func testLogin() throws {
+        app.buttons["loginButton"].tap()
+        
+        let username = app.textFields["Username"]
+        username.tap()
+        username.typeText("test")
+        
+        let password = app.secureTextFields["Password"]
+        password.tap()
+        password.typeText("pass")
+        app.keyboards.buttons["Return"].tap()
+        
+        let login = app.buttons["loginNow"]
+        login.tap()
+        
+        XCTAssertFalse(login.waitForExistence(timeout: 0.5))
+    }
+    
     
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
