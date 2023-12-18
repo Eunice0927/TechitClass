@@ -22,12 +22,32 @@ final class UITestingDemoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    // 환영 라벨 테스트
+    func testWelcom() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+//        let welcome = app.staticTexts["Welcom!"]
+        // 현재 앱에 존재하는 유일한 텍스트 뷰 이기 때문에...
+        let welcome = app.staticTexts.element
+        
+        XCTAssert(welcome.exists)
+        XCTAssertEqual(welcome.label, "Welcom!")
+    }
+    
+    // 로그인 버튼 테스트
+    func testLoginButton() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+//        let login = app.buttons["Login"]
+        let login = app.buttons["loginButton"]
+        
+        XCTAssert(login.exists)
+        // 버튼의 라벨을 확인
+        // 테스트가 통과하지 못하면 버튼이 제거되었지 확인
+        // 라벨이 의도적으로 또는 실수로 변경되었는지 확인
+        XCTAssertEqual(login.label, "Login")
     }
 
     func testLaunchPerformance() throws {
