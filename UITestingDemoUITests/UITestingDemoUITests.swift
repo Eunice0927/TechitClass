@@ -67,6 +67,17 @@ final class UITestingDemoUITests: XCTestCase {
         let dismiss = app.buttons["Dismiss"]
         XCTAssert(dismiss.exists)
     }
+    
+    // 닫기 버튼 테스트
+    // 특정 시간이 경과한 후에는 닫기(해제) 버튼이 더 이상 존재하지 않음을 확인
+    func testLoginDismiss() throws {
+        app.buttons["loginButton"].tap()
+        
+        let dismiss = app.buttons["Dismiss"]
+        dismiss.tap()
+        
+        XCTAssertFalse(dismiss.waitForExistence(timeout: 0.5))
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
