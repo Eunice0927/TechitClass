@@ -26,6 +26,10 @@ struct ContentView: View {
 
         }
         .padding()
+        // 로그인 시트 표시
+        .sheet(isPresented: $showLogin) {
+            LoginView()
+        }
     }
 }
 

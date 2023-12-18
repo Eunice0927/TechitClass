@@ -15,6 +15,7 @@
 		DE2B143A2B2FCDAE00566C6D /* UITestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B14392B2FCDAE00566C6D /* UITestingDemoUITests.swift */; };
 		DE2B143C2B2FCDAE00566C6D /* UITestingDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B143B2B2FCDAE00566C6D /* UITestingDemoUITestsLaunchTests.swift */; };
 		DE2B14492B2FE24D00566C6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B14482B2FE24D00566C6D /* User.swift */; };
+		DE2B144B2B2FE66700566C6D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B144A2B2FE66700566C6D /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		DE2B14392B2FCDAE00566C6D /* UITestingDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingDemoUITests.swift; sourceTree = "<group>"; };
 		DE2B143B2B2FCDAE00566C6D /* UITestingDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DE2B14482B2FE24D00566C6D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DE2B144A2B2FE66700566C6D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				DE2B14482B2FE24D00566C6D /* User.swift */,
 				DE2B141E2B2FCDAB00566C6D /* UITestingDemoApp.swift */,
 				DE2B14202B2FCDAB00566C6D /* ContentView.swift */,
+				DE2B144A2B2FE66700566C6D /* LoginView.swift */,
 				DE2B14222B2FCDAD00566C6D /* Assets.xcassets */,
 				DE2B14242B2FCDAD00566C6D /* Preview Content */,
 			);
@@ -262,6 +265,7 @@
 			files = (
 				DE2B14212B2FCDAB00566C6D /* ContentView.swift in Sources */,
 				DE2B141F2B2FCDAB00566C6D /* UITestingDemoApp.swift in Sources */,
+				DE2B144B2B2FE66700566C6D /* LoginView.swift in Sources */,
 				DE2B14492B2FE24D00566C6D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
