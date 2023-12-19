@@ -12,6 +12,7 @@
 		DE9480962B311CCC004D9AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9480952B311CCC004D9AE5 /* Assets.xcassets */; };
 		DE9480992B311CCC004D9AE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9480982B311CCC004D9AE5 /* Preview Assets.xcassets */; };
 		DE9480A02B316BE1004D9AE5 /* ExCruveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE94809F2B316BE1004D9AE5 /* ExCruveView.swift */; };
+		DE9480A22B316E07004D9AE5 /* ExPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		DE9480952B311CCC004D9AE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE9480982B311CCC004D9AE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE94809F2B316BE1004D9AE5 /* ExCruveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCruveView.swift; sourceTree = "<group>"; };
+		DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExPieChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				DE9480912B311CCB004D9AE5 /* DrawDemoApp.swift */,
 				DE9480932B311CCB004D9AE5 /* ContentView.swift */,
 				DE94809F2B316BE1004D9AE5 /* ExCruveView.swift */,
+				DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */,
 				DE9480952B311CCC004D9AE5 /* Assets.xcassets */,
 				DE9480972B311CCC004D9AE5 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				DE9480942B311CCB004D9AE5 /* ContentView.swift in Sources */,
 				DE9480A02B316BE1004D9AE5 /* ExCruveView.swift in Sources */,
 				DE9480922B311CCB004D9AE5 /* DrawDemoApp.swift in Sources */,
+				DE9480A22B316E07004D9AE5 /* ExPieChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
