@@ -8,6 +8,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack {
+//                ExCruveView()
                 PathView()
                 Spacer().frame(height: 350)
                 MyShape()
