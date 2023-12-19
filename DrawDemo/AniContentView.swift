@@ -13,8 +13,35 @@ struct AniContentView: View {
             ButtonImplicitAniView()
             ButtonExplicitAniView()
             CircleExplicitAniView()
+            StateBindingAniView()
         }
 
+    }
+}
+
+// 애니메이션과 상태 바인딩
+struct StateBindingAniView: View {
+    
+    @State private var visibility = false
+    
+    var body: some View {
+        VStack {
+            Toggle(isOn: $visibility.animation(.linear(duration: 1))) {
+                Text("Toggle Text Views")
+            }
+            .padding()
+            
+            if visibility {
+                Text("Hello World")
+                    .font(.largeTitle)
+            }
+            
+            if !visibility {
+                Text("Goodbye World")
+                    .font(.largeTitle)
+            }
+        }
+        
     }
 }
 
