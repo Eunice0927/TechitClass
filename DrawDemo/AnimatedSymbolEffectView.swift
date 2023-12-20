@@ -11,8 +11,28 @@ struct AnimatedSymbolEffectView: View {
     var body: some View {
         VStack {
 //            BounceAniSFView()
-            MoreSymbolAnimationView()
+//            MoreSymbolAnimationView()
+            ContentTrasitionAnimationView()
         }
+    }
+}
+
+// 콘텐츠 전환 및 애니메이션 교체
+struct ContentTrasitionAnimationView: View {
+    
+    @State private var animate = false
+    
+    var body: some View {
+        Image(systemName: animate ? "checkmark.circle" : "touchid")
+            .font(.system(size: 100))
+            .symbolRenderingMode(.palette)
+            .foregroundStyle(.purple, .gray)
+            // options: repeat(특정 횟수 만큼 반복), speed(애니메이션 속도 제어)
+            .symbolEffect(.bounce, options: .speed(1.5), value: animate)
+            .contentTransition(.symbolEffect(.replace))
+            .onTapGesture {
+                animate.toggle()
+            }
     }
 }
 
