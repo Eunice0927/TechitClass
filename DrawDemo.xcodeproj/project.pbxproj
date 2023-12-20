@@ -15,6 +15,7 @@
 		DE9480A22B316E07004D9AE5 /* ExPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */; };
 		DE9480A42B317429004D9AE5 /* AniContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480A32B317429004D9AE5 /* AniContentView.swift */; };
 		DE9480AC2B326BA1004D9AE5 /* AniNavigationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480AB2B326BA1004D9AE5 /* AniNavigationMenuView.swift */; };
+		DE9480AE2B3277B2004D9AE5 /* AniGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480AD2B3277B2004D9AE5 /* AniGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExPieChartView.swift; sourceTree = "<group>"; };
 		DE9480A32B317429004D9AE5 /* AniContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniContentView.swift; sourceTree = "<group>"; };
 		DE9480AB2B326BA1004D9AE5 /* AniNavigationMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniNavigationMenuView.swift; sourceTree = "<group>"; };
+		DE9480AD2B3277B2004D9AE5 /* AniGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				DE9480912B311CCB004D9AE5 /* DrawDemoApp.swift */,
 				DE9480932B311CCB004D9AE5 /* ContentView.swift */,
 				DE9480A32B317429004D9AE5 /* AniContentView.swift */,
+				DE9480AD2B3277B2004D9AE5 /* AniGradientView.swift */,
 				DE9480AB2B326BA1004D9AE5 /* AniNavigationMenuView.swift */,
 				DE94809F2B316BE1004D9AE5 /* ExCruveView.swift */,
 				DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE9480AE2B3277B2004D9AE5 /* AniGradientView.swift in Sources */,
 				DE9480942B311CCB004D9AE5 /* ContentView.swift in Sources */,
 				DE9480A02B316BE1004D9AE5 /* ExCruveView.swift in Sources */,
 				DE9480922B311CCB004D9AE5 /* DrawDemoApp.swift in Sources */,
