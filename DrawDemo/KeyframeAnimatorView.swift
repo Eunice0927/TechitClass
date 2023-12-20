@@ -36,6 +36,14 @@ struct EmojiKeyframeAnimatorView: View {
                 } keyframes: { Value in
                     KeyframeTrack(\.scale) {
                         CubicKeyframe(0.8, duration: 0.2)
+                        // 시간이 지남에 따라 다른 값 변경을 자유롭게 정의
+                        //  애니메이션이 더 부드럽고 유동적으로 변한 것을 확인
+                        CubicKeyframe(0.6, duration: 0.3)
+                        CubicKeyframe(1.0, duration: 0.3)
+                        
+                        CubicKeyframe(0.8, duration: 0.2)
+                        CubicKeyframe(0.5, duration: 0.3)
+                        CubicKeyframe(1.0, duration: 0.3)
                     }
                 }
         }
