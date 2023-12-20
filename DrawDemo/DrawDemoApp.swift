@@ -11,7 +11,7 @@ import SwiftUI
 struct DrawDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            PhaseAnimatorView()
+            KeyframeAnimatorView()
         }
     }
 }
