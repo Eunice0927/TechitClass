@@ -10,10 +10,30 @@ import SwiftUI
 struct AniGradientView: View {
     var body: some View {
 //        StartEndAniGradientView()
-        RadialAniGradientView()
-        
+//        RadialAniGradientView()
+        HueRotationAniGradientView()
     }
 }
+
+// 색조 회전을 사용하여 그라데이션에 애니메이션
+struct HueRotationAniGradientView: View {
+
+    @State private var animateGradient = true
+    
+    var body: some View {
+        LinearGradient(colors: [.purple, .yellow],
+                       startPoint: .topLeading,
+                       endPoint: .bottomTrailing)
+        .ignoresSafeArea()
+        .hueRotation(.degrees(animateGradient ? 90 : 0))
+        .onAppear {
+            withAnimation(.linear(duration: 1).repeatForever(autoreverses: true)) {
+                animateGradient.toggle()
+            }
+        }
+    }
+}
+
 
 struct RadialAniGradientView: View {
     
