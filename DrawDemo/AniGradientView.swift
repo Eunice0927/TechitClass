@@ -9,7 +9,28 @@ import SwiftUI
 
 struct AniGradientView: View {
     var body: some View {
-        StartEndAniGradientView()
+//        StartEndAniGradientView()
+        RadialAniGradientView()
+        
+    }
+}
+
+struct RadialAniGradientView: View {
+    
+    // 애니메이션 상태를 유지하는 상태 변수를 선언
+    @State private var animateGradient = false
+    
+    var body: some View {
+        RadialGradient(colors: [.purple, .yellow],
+                       center: .center,
+                       startRadius: animateGradient ? 400 : 200,
+                       endRadius:   animateGradient ? 20 : 40)
+        .ignoresSafeArea()
+        .onAppear {
+            withAnimation(.linear(duration: 3).repeatForever(autoreverses: true)) {
+                animateGradient.toggle()
+            }
+        }
     }
 }
 
