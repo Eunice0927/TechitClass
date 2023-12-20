@@ -18,6 +18,7 @@
 		DE9480AE2B3277B2004D9AE5 /* AniGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480AD2B3277B2004D9AE5 /* AniGradientView.swift */; };
 		DE9480B02B328C93004D9AE5 /* PhaseAnimatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480AF2B328C93004D9AE5 /* PhaseAnimatorView.swift */; };
 		DE9480B22B32AFEC004D9AE5 /* KeyframeAnimatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480B12B32AFEC004D9AE5 /* KeyframeAnimatorView.swift */; };
+		DE9480B42B32BC3A004D9AE5 /* AnimatedSymbolEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480B32B32BC3A004D9AE5 /* AnimatedSymbolEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		DE9480AD2B3277B2004D9AE5 /* AniGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniGradientView.swift; sourceTree = "<group>"; };
 		DE9480AF2B328C93004D9AE5 /* PhaseAnimatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseAnimatorView.swift; sourceTree = "<group>"; };
 		DE9480B12B32AFEC004D9AE5 /* KeyframeAnimatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeAnimatorView.swift; sourceTree = "<group>"; };
+		DE9480B32B32BC3A004D9AE5 /* AnimatedSymbolEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSymbolEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DE9480AB2B326BA1004D9AE5 /* AniNavigationMenuView.swift */,
 				DE9480AF2B328C93004D9AE5 /* PhaseAnimatorView.swift */,
 				DE9480B12B32AFEC004D9AE5 /* KeyframeAnimatorView.swift */,
+				DE9480B32B32BC3A004D9AE5 /* AnimatedSymbolEffectView.swift */,
 				DE94809F2B316BE1004D9AE5 /* ExCruveView.swift */,
 				DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */,
 				DE9480952B311CCC004D9AE5 /* Assets.xcassets */,
@@ -160,6 +163,7 @@
 			files = (
 				DE9480AE2B3277B2004D9AE5 /* AniGradientView.swift in Sources */,
 				DE9480B02B328C93004D9AE5 /* PhaseAnimatorView.swift in Sources */,
+				DE9480B42B32BC3A004D9AE5 /* AnimatedSymbolEffectView.swift in Sources */,
 				DE9480942B311CCB004D9AE5 /* ContentView.swift in Sources */,
 				DE9480A02B316BE1004D9AE5 /* ExCruveView.swift in Sources */,
 				DE9480922B311CCB004D9AE5 /* DrawDemoApp.swift in Sources */,
