@@ -9,16 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        LinearProgressView()
+    }
+}
+
+struct LinearProgressView: View {
+    
+    @State private var progress: Double = 1.0
+    
+    var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            // 제목 표시 문자열, 현재 진행률을 나타내는 값, 작업 완료를 정의하는 합계
+            ProgressView("Task Process", value: progress, total: 100)
+                .progressViewStyle(LinearProgressViewStyle(tint: .red))
+            
+            // progress 상태 프로퍼티를 조정
+            Slider(value: $progress, in: 1...100, step: 0.1)
         }
         .padding()
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
