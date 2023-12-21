@@ -32,7 +32,7 @@ struct CustomProgressView: View {
                 .progressViewStyle(MyCustomProgressViewStyle())
             
             ProgressView("Task 3 Process", value: progress, total: 100)
-                .progressViewStyle(CircularProgressViewStyle())
+                .progressViewStyle(MyCircleCustomProgressViewStyle())
             
             Slider(value: $progress, in: 1...100, step: 0.1)
         }
@@ -62,6 +62,34 @@ struct MyCustomProgressViewStyle : ProgressViewStyle {
     }
 }
 
+// 원형 모양의 사용자 정의 프로그래스 뷰 스타일
+struct MyCircleCustomProgressViewStyle : ProgressViewStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        
+        let degres = configuration.fractionCompleted! * 360
+        
+        return MyCircle(startAngle: .degrees(1), endAngle: .degrees(degres))
+            .frame(width: 200, height: 200)
+            .padding(50)
+    }
+}
+
+
+// 원형 경로를 그리는 Shape
+struct MyCircle: Shape {
+    var startAngle: Angle
+    var endAngle: Angle
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY),
+                    radius: rect.width / 2, startAngle: startAngle,
+                    endAngle: endAngle, clockwise: true)
+
+        return path.strokedPath(.init(lineWidth: 100, dash: [5, 3],
+                                      dashPhase: 10))
+    }
+}
 
 // label 선택 및 매개변수를 사용
 // 레이블을 추가하여 상태 메시지와 현재 진행 상황을 표시
