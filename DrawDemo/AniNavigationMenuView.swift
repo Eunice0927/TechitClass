@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AniNavigationMenuView: View {
+    @State var selectedIndex = 0
     var body: some View {
-        NavigationMenu()
+        NavigationMenu(selectedIndex: $selectedIndex)
     }
 }
 
@@ -19,8 +20,9 @@ struct NavigationMenu: View {
     // 메뉴 항목이 선택될 때마다 뷰 변경에 애니메이션을 적용하는 네임스페이스 변수
     @Namespace private var menuItemTransition
     
-    @State var selectedIndex = 0
-    let menuItems = ["Travel", "Nature", "Architecture"]
+    // 애니메이션 탐색 메뉴를 프로젝트에 적용하려면 선택한 색인에 대한 바인딩을 허용하도록 수정
+    @Binding var selectedIndex: Int
+    var menuItems = ["Travel", "Nature", "Architecture"]
     
     var body: some View {
         HStack {
