@@ -9,7 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        BasicGestureView()
+//        BasicGestureView()
+        OnChangedGestureView()
+    }
+}
+
+// onChanged
+struct OnChangedGestureView: View {
+    
+    let magnificationGesture = MagnificationGesture(minimumScaleDelta: 0)
+        .onChanged { _ in print("Magnifying") }
+        .onEnded { _ in print("MagnificationGesture") }
+    
+    var body: some View {
+        VStack {
+            Image(systemName: "hand.point.right.fill")
+                .resizable()
+                .font(.largeTitle)
+                .frame(width: 100, height: 100)
+                .gesture(magnificationGesture)
+        }
     }
 }
 
