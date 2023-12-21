@@ -17,16 +17,24 @@ struct ContentView: View {
 // onChanged
 struct OnChangedGestureView: View {
     
-    let magnificationGesture = MagnificationGesture(minimumScaleDelta: 0)
-        .onChanged { _ in print("Magnifying") }
-        .onEnded { _ in print("MagnificationGesture") }
+    @State private var magnification: CGFloat = 1.0
     
     var body: some View {
+        
+        let magnificationGesture = MagnificationGesture(minimumScaleDelta: 0)
+            .onChanged { value in
+                print("Magnifying")
+                self.magnification = value
+            }
+            .onEnded { _ in print("MagnificationGesture") }
+        
         VStack {
             Image(systemName: "hand.point.right.fill")
                 .resizable()
                 .font(.largeTitle)
                 .frame(width: 100, height: 100)
+                // 확대/축소 작업의 현재 비율을 가지고 이미지 뷰의 크기 조절
+                .scaleEffect(magnification)
                 .gesture(magnificationGesture)
         }
     }
