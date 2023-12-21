@@ -11,7 +11,7 @@ import SwiftUI
 struct GestureDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExGestureView()
         }
     }
 }
