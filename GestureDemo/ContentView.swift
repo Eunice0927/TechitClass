@@ -10,7 +10,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 //        BasicGestureView()
-        OnChangedGestureView()
+//        OnChangedGestureView()
+        UpdatingGestureView()
+    }
+}
+
+// updating 액션 콜백
+struct UpdatingGestureView: View {
+    
+    // updating 콜백은 DragGesture.Value 객체에서 translation 값을 추출하여
+    // @GestureState 프로퍼티에 할당(상태를 임시 저장)
+    @GestureState private var offset: CGSize = .zero
+    
+    var body: some View {
+        
+        let drag = DragGesture()
+            .updating($offset) { dragValue, state, transaction in
+                state = dragValue.translation
+            }
+        
+        VStack {
+            Image(systemName: "hand.point.right.fill")
+                .resizable()
+                .font(.largeTitle)
+                .frame(width: 100, height: 100)
+            // 화면의 드래그 제스터에 따라 움직이도록 처리
+                .offset(offset)
+                .gesture(drag)
+        }
     }
 }
 
