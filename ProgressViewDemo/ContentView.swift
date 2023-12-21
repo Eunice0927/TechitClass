@@ -10,7 +10,27 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 //        LinearProgressView()
-        CircularProgressView()
+//        CircularProgressView()
+        ExtCircularProgressView()
+    }
+}
+
+// progressViewStyle을 모두에게 적용
+struct ExtCircularProgressView: View {
+    
+    @State private var progress: Double = 1.0
+    
+    var body: some View {
+        VStack {
+            ProgressView("Task 1 Process", value: progress, total: 100)
+            ProgressView("Task 2 Process", value: progress, total: 100)
+            ProgressView("Task 3 Process", value: progress, total: 100)
+            
+            // progress 상태 프로퍼티를 조정
+            Slider(value: $progress, in: 1...100, step: 0.1)
+        }
+        .progressViewStyle(CircularProgressViewStyle(tint: .red))
+        .padding()
     }
 }
 
