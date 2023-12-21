@@ -11,7 +11,38 @@ struct ContentView: View {
     var body: some View {
 //        BasicGestureView()
 //        OnChangedGestureView()
-        UpdatingGestureView()
+//        UpdatingGestureView()
+        SimultaneouslyGestureView()
+    }
+}
+
+// 제스처를 결합하여 적용
+struct  SimultaneouslyGestureView: View {
+    
+    // updating 콜백은 DragGesture.Value 객체에서 translation 값을 추출하여
+    // @GestureState 프로퍼티에 할당(상태를 임시 저장)
+    @GestureState private var offset: CGSize = .zero
+    @GestureState private var longPress: Bool = false
+    
+    var body: some View {
+        
+        let longPressAndDrag = LongPressGesture(minimumDuration: 1.0)
+            .updating($longPress) { value, state, transaction in
+                state = value
+            }
+            .simultaneously(with: DragGesture())
+            .updating($offset) { value, state, transaction in
+                state = value.second?.translation ?? .zero
+            }
+        
+        VStack {
+            Image(systemName: "hand.point.right.fill")
+                .foregroundStyle(longPress ? .red : .blue)
+                .font(.largeTitle)
+            // 화면의 드래그 제스처에 따라 움직이도록 처리
+                .offset(offset)
+                .gesture(longPressAndDrag)
+        }
     }
 }
 
@@ -34,7 +65,7 @@ struct UpdatingGestureView: View {
                 .resizable()
                 .font(.largeTitle)
                 .frame(width: 100, height: 100)
-            // 화면의 드래그 제스터에 따라 움직이도록 처리
+            // 화면의 드래그 제스처에 따라 움직이도록 처리
                 .offset(offset)
                 .gesture(drag)
         }
