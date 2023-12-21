@@ -12,7 +12,8 @@ struct ContentView: View {
 //        LinearProgressView()
 //        CircularProgressView()
 //        ExtCircularProgressView()
-        ExtProgressView()
+//        ExtProgressView()
+        TimerProgressView()
     }
 }
 
@@ -35,6 +36,31 @@ struct ExtProgressView: View {
             Slider(value: $progress, in: 1...100, step: 0.1)
         }
         .padding()
+    }
+}
+
+// 불확정적인 ProgressView (언제 종료될지 알 수 없는)
+// 진행률 값을 시간에 따라 업데이트하는 예시
+struct TimerProgressView: View {
+    
+    @State private var progress: Double = 0.1
+    
+    var body: some View {
+        ProgressView(value: progress,
+                     label: { Text("Working...") },
+                     currentValueLabel: {
+                        Text(progress.formatted(.percent.precision(.fractionLength(0))))
+                     }
+        )
+        .padding()
+        .task {
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in 
+                self.progress += 0.1
+                if self.progress > 1.0 {
+                    self.progress = 0.0
+                }
+            }
+        }
     }
 }
 
