@@ -12,11 +12,52 @@ struct ContentView: View {
 //        BasicGestureView()
 //        OnChangedGestureView()
 //        UpdatingGestureView()
-        SimultaneouslyGestureView()
+//        SimultaneouslyGestureView()
+        SequencedGestureView()
     }
 }
 
-// 제스처를 결합하여 적용
+// 여러 개의 제스처를 결합 sequenced 경우
+// 롱 프레스 제스처와 드래그 제스처를 순차적으로 구성
+// 이미지의 색상이 녹색으로 바뀔 때까지 롱 프레스한 다음 드래그 제스처를 사용하여 이미지를 이동
+struct SequencedGestureView: View {
+
+    @GestureState private var offset: CGSize = .zero
+    @State private var dragEnable: Bool = false
+    
+    var body: some View {
+        
+        let longPressBeforeDrag = LongPressGesture(minimumDuration: 1.0)
+            .onEnded { _ in
+                self.dragEnable = true
+            }
+            .sequenced(before: DragGesture())
+            .updating($offset) { value, state, transaction in
+                switch value {
+                case .first(true):
+                    print("Long Press in progress")
+                case .second(true, let drag):
+                    state = drag?.translation ?? .zero
+                default: break
+                }
+            }
+            .onEnded { _ in
+                self.dragEnable = false
+            }
+        
+        VStack {
+            Image(systemName: "hand.point.right.fill")
+                .foregroundStyle(dragEnable ? .green : .blue)
+                .font(.largeTitle)
+                // 화면의 드래그 제스처에 따라 움직이도록 처리
+                .offset(offset)
+                .gesture(longPressBeforeDrag)
+        }
+    }
+}
+
+// 여러 개의 제스처를 결합 simultaneously 경우
+// 롱 프레스 제스처와 드래그 제스처를 동시에 구성
 struct  SimultaneouslyGestureView: View {
     
     // updating 콜백은 DragGesture.Value 객체에서 translation 값을 추출하여
