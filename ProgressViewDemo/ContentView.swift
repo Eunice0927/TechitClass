@@ -11,7 +11,30 @@ struct ContentView: View {
     var body: some View {
 //        LinearProgressView()
 //        CircularProgressView()
-        ExtCircularProgressView()
+//        ExtCircularProgressView()
+        ExtProgressView()
+    }
+}
+
+// label 선택 및 매개변수를 사용
+// 레이블을 추가하여 상태 메시지와 현재 진행 상황을 표시
+struct ExtProgressView: View {
+    
+    @State private var progress: Double = 30
+    
+    var body: some View {
+        VStack {
+            ProgressView(value: progress, total: 100, label: {
+                Text("Working...")
+            }, currentValueLabel: {
+                Text("\(lroundl(progress))%")
+            })
+                .tint(.purple)
+                .progressViewStyle(.circular)
+            
+            Slider(value: $progress, in: 1...100, step: 0.1)
+        }
+        .padding()
     }
 }
 
