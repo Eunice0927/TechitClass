@@ -29,7 +29,7 @@ struct CustomProgressView: View {
                 .progressViewStyle(ShadowProgressViewStyle())
             
             ProgressView("Task 2 Process", value: progress, total: 100)
-                .progressViewStyle(CircularProgressViewStyle())
+                .progressViewStyle(MyCustomProgressViewStyle())
             
             ProgressView("Task 3 Process", value: progress, total: 100)
                 .progressViewStyle(CircularProgressViewStyle())
@@ -52,6 +52,15 @@ struct ShadowProgressViewStyle : ProgressViewStyle {
     }
 }
 
+// Text 뷰에 진행률을 표시하는 프로그래스 뷰
+struct MyCustomProgressViewStyle : ProgressViewStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        
+        let percent = Int(configuration.fractionCompleted! * 100)
+        
+        return Text("Task \(percent)% Complete")
+    }
+}
 
 
 // label 선택 및 매개변수를 사용
