@@ -9,7 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LinearProgressView()
+//        LinearProgressView()
+        CircularProgressView()
+    }
+}
+
+// CircularProgressViewStyle
+struct CircularProgressView: View {
+    
+    @State private var progress: Double = 1.0
+    
+    var body: some View {
+        VStack {
+            ProgressView("Task Process", value: progress, total: 100)
+                .progressViewStyle(CircularProgressViewStyle(tint: .red))
+            
+            // progress 상태 프로퍼티를 조정
+            Slider(value: $progress, in: 1...100, step: 0.1)
+        }
+        .padding()
     }
 }
 
