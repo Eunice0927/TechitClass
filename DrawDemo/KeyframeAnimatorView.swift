@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KeyframeAnimatorView: View {
     var body: some View {
-        EmojiKeyframeAnimatorView()
+        EmojiKeyframeAnimatorView(emoji: "😹")
     }
 }
 
@@ -26,10 +26,11 @@ struct EmojiKeyframeAnimatorView: View {
     
     // repeating 매개변수에 원하는 조건을 지정하여 시작 기준을 정의
     @State private var startAnimation = false
+    var emoji: String
     
     var body: some View {
         VStack {
-            Text("😹")
+            Text(emoji)
                 .font(.system(size: 100))
                 .keyframeAnimator(initialValue: AnimationValues(), repeating: startAnimation) { content, value in
                     content

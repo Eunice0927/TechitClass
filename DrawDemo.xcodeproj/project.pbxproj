@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE1578342B33C021008193E4 /* ExAniNavMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1578332B33C021008193E4 /* ExAniNavMenuView.swift */; };
+		DE1578362B33C7D8008193E4 /* ExKeyframeAnimatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1578352B33C7D8008193E4 /* ExKeyframeAnimatorView.swift */; };
 		DE9480922B311CCB004D9AE5 /* DrawDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480912B311CCB004D9AE5 /* DrawDemoApp.swift */; };
 		DE9480942B311CCB004D9AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9480932B311CCB004D9AE5 /* ContentView.swift */; };
 		DE9480962B311CCC004D9AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9480952B311CCC004D9AE5 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		DE1578332B33C021008193E4 /* ExAniNavMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExAniNavMenuView.swift; sourceTree = "<group>"; };
+		DE1578352B33C7D8008193E4 /* ExKeyframeAnimatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExKeyframeAnimatorView.swift; sourceTree = "<group>"; };
 		DE94808E2B311CCB004D9AE5 /* DrawDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9480912B311CCB004D9AE5 /* DrawDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDemoApp.swift; sourceTree = "<group>"; };
 		DE9480932B311CCB004D9AE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				DE94809F2B316BE1004D9AE5 /* ExCruveView.swift */,
 				DE9480A12B316E07004D9AE5 /* ExPieChartView.swift */,
 				DE1578332B33C021008193E4 /* ExAniNavMenuView.swift */,
+				DE1578352B33C7D8008193E4 /* ExKeyframeAnimatorView.swift */,
 				DE9480952B311CCC004D9AE5 /* Assets.xcassets */,
 				DE9480972B311CCC004D9AE5 /* Preview Content */,
 			);
@@ -174,6 +177,7 @@
 				DE9480A42B317429004D9AE5 /* AniContentView.swift in Sources */,
 				DE9480AC2B326BA1004D9AE5 /* AniNavigationMenuView.swift in Sources */,
 				DE9480B22B32AFEC004D9AE5 /* KeyframeAnimatorView.swift in Sources */,
+				DE1578362B33C7D8008193E4 /* ExKeyframeAnimatorView.swift in Sources */,
 				DE9480A22B316E07004D9AE5 /* ExPieChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
