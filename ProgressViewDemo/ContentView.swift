@@ -13,9 +13,46 @@ struct ContentView: View {
 //        CircularProgressView()
 //        ExtCircularProgressView()
 //        ExtProgressView()
-        TimerProgressView()
+//        TimerProgressView()
+        CustomProgressView()
     }
 }
+
+// ProgressView 사용자 정의
+struct CustomProgressView: View {
+    
+    @State private var progress: Double = 1.0
+    
+    var body: some View {
+        VStack {
+            ProgressView("Task 1 Process", value: progress, total: 100)
+                .progressViewStyle(ShadowProgressViewStyle())
+            
+            ProgressView("Task 2 Process", value: progress, total: 100)
+                .progressViewStyle(CircularProgressViewStyle())
+            
+            ProgressView("Task 3 Process", value: progress, total: 100)
+                .progressViewStyle(CircularProgressViewStyle())
+            
+            Slider(value: $progress, in: 1...100, step: 0.1)
+        }
+        .padding()
+    }
+}
+
+// 강조 색상과 그림자 효과를 적용한 프로그래스 뷰
+struct ShadowProgressViewStyle : ProgressViewStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        ProgressView(configuration)
+            // 강조 색상
+            .accentColor(.red)
+            // 그림자 효과
+            .shadow(color: Color(red: 0, green: 0.7, blue: 0), radius: 5.0, x: 2.0, y: 2.0)
+            .progressViewStyle(LinearProgressViewStyle())
+    }
+}
+
+
 
 // label 선택 및 매개변수를 사용
 // 레이블을 추가하여 상태 메시지와 현재 진행 상황을 표시
