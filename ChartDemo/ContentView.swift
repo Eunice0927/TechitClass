@@ -14,10 +14,36 @@ struct ContentView: View {
 //            BasicAreaChartView()
 //            BasicBarChartView()
 //            DataAreaChartView()
-            RectangleAndLineChartView()
+//            RectangleAndLineChartView()
+            YearLineChartView()
         }
         .padding()
         .frame(height: 300)
+    }
+}
+
+// 데이터 필터링 그래프
+// .foregroundStyle 연도별로 데이터를 구분한 그래프(서로 다른 색상으로 표시)
+// .symbol 마크 포인트에 기호를 추가
+//   데이터 카테고리에 따라 서로 다른 기호를 사용하여 구별
+// .chartPlotStyle 차트 배경 등의 속성을 변경
+// .interpolationMethod 데이터 포인트를 연결하기 위해 선을 그리는 방법
+struct YearLineChartView: View {
+    var body: some View {
+        
+        Chart(tempData) { data in
+            LineMark(
+                x: .value("Month", data.month),
+                y: .value("Temp", data.degree)
+            )
+            .interpolationMethod(.stepStart)
+            .foregroundStyle(by: .value("Year", data.year))
+            .symbol(by: .value("Year", data.year))
+        }
+        .chartPlotStyle { plotArea in
+            plotArea
+                .background(.gray.opacity(0.1))
+        }
     }
 }
 
@@ -45,12 +71,17 @@ struct MontylyTemp: Identifiable {
     var id = UUID()
     var month: String
     var degree: Int
+    var year: String
 }
 
 let tempData: [MontylyTemp] = [
-    MontylyTemp(month: "Jan", degree: 50),
-    MontylyTemp(month: "Feb", degree: 43),
-    MontylyTemp(month: "Mar", degree: 61)
+    MontylyTemp(month: "Jan", degree: 50, year: "2021"),
+    MontylyTemp(month: "Feb", degree: 43, year: "2021"),
+    MontylyTemp(month: "Mar", degree: 61, year: "2021"),
+    
+    MontylyTemp(month: "Jan", degree: 30, year: "2022"),
+    MontylyTemp(month: "Feb", degree: 38, year: "2022"),
+    MontylyTemp(month: "Mar", degree: 29, year: "2022")
 ]
 
 struct DataAreaChartView: View {
