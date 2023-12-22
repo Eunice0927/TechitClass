@@ -11,7 +11,8 @@ import Charts
 struct ContentView: View {
     var body: some View {
         VStack {
-            BasicAreaChartView()
+//            BasicAreaChartView()
+            BasicBarChartView()
         }
         .padding()
         .frame(height: 300)
@@ -33,6 +34,28 @@ struct BasicAreaChartView: View {
             )
             
             AreaMark(
+                x: .value("Month", "Mar"),
+                y: .value("Temp", 61)
+            )
+            
+        }
+    }
+}
+
+struct BasicBarChartView: View {
+    var body: some View {
+        Chart {
+            BarMark(
+                x: .value("Month", "Jun"),
+                y: .value("Temp", 50)
+            )
+            
+            BarMark(
+                x: .value("Month", "Feb"),
+                y: .value("Temp", 43)
+            )
+            
+            BarMark(
                 x: .value("Month", "Mar"),
                 y: .value("Temp", 61)
             )
