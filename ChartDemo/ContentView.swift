@@ -15,7 +15,8 @@ struct ContentView: View {
 //            BasicBarChartView()
 //            DataAreaChartView()
 //            RectangleAndLineChartView()
-            YearLineChartView()
+//            YearLineChartView()
+            StyleBarChartView()
         }
         .padding()
         .frame(height: 300)
@@ -44,6 +45,41 @@ struct YearLineChartView: View {
             plotArea
                 .background(.gray.opacity(0.1))
         }
+    }
+}
+
+
+// .foregroundStyle 막대에 대해 서로 다른 색상을 표시
+// .annotation 각 막대에 주석을 추가
+// 가로 막대 차트를 만들려면 뷰의 x와 y를 교체(바꿔줌)
+struct StyleBarChartView: View {
+    var body: some View {
+        
+//        Chart(tempData.filter{$0.year == "2021"}) { data in
+//            BarMark (
+//                x: .value("Month", data.month),
+//                y: .value("Temp", data.degree)
+//            )
+//            .foregroundStyle(by: .value("Month", data.month))
+//            .annotation {
+//                Text("\(data.degree)")
+//                    .foregroundStyle(.brown)
+//            }
+//        }
+        
+        // 가로 막대 차트를 만들려면 뷰의 x와 y를 교체(바꿔줌)
+        Chart(tempData.filter{$0.year == "2021"}) { data in
+            BarMark (
+                x: .value("Temp", data.degree),
+                y: .value("Month", data.month)
+            )
+            .foregroundStyle(by: .value("Month", data.month))
+            .annotation {
+                Text("\(data.degree)")
+                    .foregroundStyle(.brown)
+            }
+        }
+
     }
 }
 
