@@ -21,7 +21,7 @@ struct ChartDemoView: View {
             ForEach(sales, id: \.channel) { channel in
                 // 월별 판매 매출
                 ForEach(channel.data) { sales in
-                    BarMark(
+                    LineMark(
                         x: .value("Month", sales.month),
                         y: .value("Total", sales.total)
                     )
@@ -32,6 +32,18 @@ struct ChartDemoView: View {
         }
         .frame(height: 250)
         .padding()
+        // 차트 y축 영역 범위
+        .chartYScale(domain: 0...15)
+        // 가로 그리드 선과 레이블을 사용자 정의
+        .chartYAxis {
+            AxisMarks(values:[0, 5, 10]) {
+                AxisValueLabel()
+            }
+            
+            AxisMarks(values:[0, 5, 10, 15]) {
+                AxisGridLine()
+            }
+        }
         
     }
 }
