@@ -13,6 +13,7 @@
 		DE8601A02B354976008994E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE86019F2B354976008994E3 /* Preview Assets.xcassets */; };
 		DE8601A72B355E00008994E3 /* SaleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8601A62B355E00008994E3 /* SaleData.swift */; };
 		DE8601A92B355F17008994E3 /* ChartDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8601A82B355F17008994E3 /* ChartDemoView.swift */; };
+		DE8601AB2B3581D3008994E3 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8601AA2B3581D3008994E3 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DE86019F2B354976008994E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE8601A62B355E00008994E3 /* SaleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleData.swift; sourceTree = "<group>"; };
 		DE8601A82B355F17008994E3 /* ChartDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDemoView.swift; sourceTree = "<group>"; };
+		DE8601AA2B3581D3008994E3 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				DE86019A2B354974008994E3 /* ContentView.swift */,
 				DE8601A62B355E00008994E3 /* SaleData.swift */,
 				DE8601A82B355F17008994E3 /* ChartDemoView.swift */,
+				DE8601AA2B3581D3008994E3 /* WeatherData.swift */,
 				DE86019C2B354976008994E3 /* Assets.xcassets */,
 				DE86019E2B354976008994E3 /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8601A92B355F17008994E3 /* ChartDemoView.swift in Sources */,
+				DE8601AB2B3581D3008994E3 /* WeatherData.swift in Sources */,
 				DE86019B2B354974008994E3 /* ContentView.swift in Sources */,
 				DE8601992B354974008994E3 /* ChartDemoApp.swift in Sources */,
 				DE8601A72B355E00008994E3 /* SaleData.swift in Sources */,
