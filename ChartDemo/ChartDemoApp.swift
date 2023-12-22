@@ -12,7 +12,8 @@ struct ChartDemoApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            ChartDemoView()
+//            ChartDemoView()
+            WeatherChartView()
         }
     }
 }
