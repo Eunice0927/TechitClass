@@ -13,7 +13,8 @@ struct ChartDemoApp: App {
         WindowGroup {
 //            ContentView()
 //            ChartDemoView()
-            WeatherChartView()
+//            WeatherChartView()
+            SectorChartDemoView()
         }
     }
 }
