@@ -44,10 +44,17 @@ struct SectorChartView: View {
                         .font(.headline)
                         .foregroundStyle(.white)
                 }
+                // 섹터 모서리를 둥글게
+                .cornerRadius(5)
             }
         }
         .frame(height: 500)
         .padding()
+        // 차트 배경에 뷰를 추가
+        .chartBackground {_ in 
+            Text("🛒")
+                .font(.system(size: 60))
+        }
         
     }
 }
