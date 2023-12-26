@@ -26,8 +26,15 @@ struct SectorChartView: View {
     var body: some View {
         Chart {
             ForEach(retailSales) { sales in
+                // angle 매개변수 : x축 값을 지정하는 대신 해당 값을 매개 angle에 전달
+                // angularInset 매개변수 : 섹터 사이에 간격을 추가
+                // outerRadius 매개변수 : 조금 더 크게 만들어 강조 표시하려는 경우
+                // innerRadius 매개변수 : 도넛 차트로 변환
                 SectorMark(
-                    angle: .value("Total", sales.total)
+                    angle: .value("Total", sales.total),
+                    innerRadius: .ratio(0.6),
+                    outerRadius: sales.month == "Jan" ? 120 : 100,
+                    angularInset: 1.0
                 )
                 .foregroundStyle(by: .value("Month", sales.month))
             }
