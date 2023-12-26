@@ -37,6 +37,13 @@ struct SectorChartView: View {
                     angularInset: 1.0
                 )
                 .foregroundStyle(by: .value("Month", sales.month))
+                // 각 섹터에 대한 레이블을 추가
+                // 각 섹터에 텍스트 레블을 오버레이하여 표시
+                .annotation(position: .overlay) {
+                    Text("\(sales.month)")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                }
             }
         }
         .frame(height: 500)
