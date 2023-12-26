@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1B24FF2B3A89FA00810E04 /* ExCustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B24FE2B3A89FA00810E04 /* ExCustomProgressView.swift */; };
 		DE86015D2B3423EB008994E3 /* ProgressViewDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86015C2B3423EB008994E3 /* ProgressViewDemoApp.swift */; };
 		DE86015F2B3423EB008994E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86015E2B3423EB008994E3 /* ContentView.swift */; };
 		DE8601612B3423EC008994E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8601602B3423EC008994E3 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE1B24FE2B3A89FA00810E04 /* ExCustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomProgressView.swift; sourceTree = "<group>"; };
 		DE8601592B3423EB008994E3 /* ProgressViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE86015C2B3423EB008994E3 /* ProgressViewDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewDemoApp.swift; sourceTree = "<group>"; };
 		DE86015E2B3423EB008994E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				DE86015C2B3423EB008994E3 /* ProgressViewDemoApp.swift */,
 				DE86015E2B3423EB008994E3 /* ContentView.swift */,
+				DE1B24FE2B3A89FA00810E04 /* ExCustomProgressView.swift */,
 				DE8601602B3423EC008994E3 /* Assets.xcassets */,
 				DE8601622B3423EC008994E3 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				DE86015F2B3423EB008994E3 /* ContentView.swift in Sources */,
 				DE86015D2B3423EB008994E3 /* ProgressViewDemoApp.swift in Sources */,
+				DE1B24FF2B3A89FA00810E04 /* ExCustomProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
