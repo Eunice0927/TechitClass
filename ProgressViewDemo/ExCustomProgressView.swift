@@ -22,12 +22,12 @@ struct ExCustomProgressView: View {
             ProgressView("Task 3 Process 색상과 높이 조절", value: progress, total: 100)
                 .progressViewStyle(BarProgressViewStyle(color: .teal, height: 100))
             
-//            ProgressView(value: progress, total: 100) {
-//                Text("Task 4 Process 색상, 높이 조절, 진행 라벨 표시")
-//            } currentValueLabel: {
-//                
-//            }
-//            .progressViewStyle(BarProgressViewStyle())
+            ProgressView(value: progress, total: 100) {
+                Text("Task 4 Process 색상, 높이 조절, 진행 라벨 표시")
+            } currentValueLabel: {
+                Text("\(lroundl(progress))%")
+            }
+            .progressViewStyle(BarProgressViewStyle(color: .teal, height: 100, labelFontStyle: .title))
             
             Slider(value: $progress, in: 1...100, step: 0.1)
         }
@@ -59,6 +59,13 @@ struct BarProgressViewStyle : ProgressViewStyle {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(color)
                             .frame(width: geometry.size.width * progress)
+                            .overlay {
+                                if let currentValueLabel = configuration.currentValueLabel {
+                                    currentValueLabel
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                }
+                            }
                     }
             }
         }
