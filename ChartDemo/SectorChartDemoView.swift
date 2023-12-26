@@ -10,7 +10,31 @@ import Charts
 
 struct SectorChartDemoView: View {
     var body: some View {
-        OneRankBarChartDemoView()
+//        OneRankBarChartDemoView()
+        SectorChartView()
+    }
+}
+
+// 막대형 차트를 원형 차트로 변형
+struct SectorChartView: View {
+    
+    let sales = [
+        (channel: "Retail", data: retailSales),
+        (channel: "Online", data: onlineSales)
+    ]
+    
+    var body: some View {
+        Chart {
+            ForEach(retailSales) { sales in
+                SectorMark(
+                    angle: .value("Total", sales.total)
+                )
+                .foregroundStyle(by: .value("Month", sales.month))
+            }
+        }
+        .frame(height: 500)
+        .padding()
+        
     }
 }
 
@@ -37,6 +61,7 @@ struct OneRankBarChartDemoView: View {
         
     }
 }
+
 
 //#Preview {
 //    SectorChartDemoView()
