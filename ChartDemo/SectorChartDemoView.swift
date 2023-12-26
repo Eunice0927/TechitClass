@@ -46,6 +46,8 @@ struct SectorChartView: View {
                 }
                 // 섹터 모서리를 둥글게
                 .cornerRadius(5)
+                // 선택하지 않은 섹터에 투명도 처리
+                .opacity(selectedSector == nil ? 1.0 : (selectedSector == sales.month ? 1.0 : 0.5))
             }
         }
         .frame(height: 500)
