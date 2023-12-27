@@ -55,6 +55,7 @@ struct ContentView: View {
                             Text(product.quantity ?? "Not found")
                         }
                     }
+                    .onDelete(perform: deleteProducts)
                 }
                 .navigationTitle("Product Database")
             }
@@ -89,6 +90,17 @@ struct ContentView: View {
         .frame(height: 200)
     }
     
+    // 제품 삭제
+    // offsets: 선택한 항목의 위치를 나타내는 List 항목의 오프셋 세트가 전달
+    // saveContext() 항목이 삭제되면 변경사항을 영구 저장소에 저장
+    private func deleteProducts(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { products[$0] }.forEach(viewContext.delete)
+            
+            saveContext()
+        }
+    }
+
     // 제품 추가
     private func addProduct() {
         withAnimation {
