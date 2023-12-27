@@ -20,7 +20,9 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @FetchRequest(entity: Product.entity(), sortDescriptors: [])
+    // 제품 항목이 name 속성을 기준으로 알파벳 오름차순으로 정렬
+    @FetchRequest(entity: Product.entity(),
+                  sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)])
     private var products: FetchedResults<Product>
     
 
@@ -33,7 +35,7 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Button("Add") {
-                        
+                        addProduct()
                     }
                     Spacer()
                     Button("Clear") {
@@ -84,8 +86,35 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        .frame(height: 200)
+    }
+    
+    // 제품 추가
+    private func addProduct() {
+        withAnimation {
+            let product = Product(context: viewContext)
+            product.name = self.name
+            product.quantity = self.quantity
+
+            saveContext()
+        }
+    }
+    
+    // 제품 저장하기
+    // viewContext를 영구 저장소에 저장
+    // 데이터를 저장하면, 최신 데이터를 가져와서 products 데이터 변수에 할당
+    // List 뷰가 최신 데이터로 업데이트 (addProduct() 함수 내에서 withAnimation에 배치)
+    private func saveContext() {
+        do {
+            try viewContext.save()
+        } catch {
+            let error = error as NSError
+            fatalError("An error occurred \(error)")
+        }
     }
 
+    
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
