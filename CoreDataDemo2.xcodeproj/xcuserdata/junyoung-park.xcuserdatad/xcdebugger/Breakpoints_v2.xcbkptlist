@@ -49,6 +49,21 @@
                   endingLineNumber = "122"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "93EC9D15-C651-41CB-BB01-E79031DA4914 - dd84d44350ec97ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoreDataDemo2.ContentView.addProduct() -&gt; ()"
+                  moduleName = "CoreDataDemo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyoung-park/XCodeProjects/Swift_Project/CoreDataDemo2/CoreDataDemo2/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "148">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
