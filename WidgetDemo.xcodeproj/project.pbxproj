@@ -19,6 +19,7 @@
 		DE1B25F42B3D120100810E04 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B25F32B3D120100810E04 /* AppIntent.swift */; };
 		DE1B25F62B3D120300810E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1B25F52B3D120300810E04 /* Assets.xcassets */; };
 		DE1B25FA2B3D120300810E04 /* WeatherWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DE1B25E62B3D120100810E04 /* WeatherWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE1B26002B3D16CB00810E04 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B25FF2B3D16CB00810E04 /* WeatherDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		DE1B25F32B3D120100810E04 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		DE1B25F52B3D120300810E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1B25F72B3D120300810E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1B25FF2B3D16CB00810E04 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				DE1B25D42B3D11A900810E04 /* WidgetDemoApp.swift */,
 				DE1B25D62B3D11A900810E04 /* ContentView.swift */,
+				DE1B25FF2B3D16CB00810E04 /* WeatherDetailView.swift */,
 				DE1B25D82B3D11AB00810E04 /* Assets.xcassets */,
 				DE1B25DA2B3D11AB00810E04 /* Preview Content */,
 			);
@@ -245,6 +248,7 @@
 			files = (
 				DE1B25D72B3D11A900810E04 /* ContentView.swift in Sources */,
 				DE1B25D52B3D11A900810E04 /* WidgetDemoApp.swift in Sources */,
+				DE1B26002B3D16CB00810E04 /* WeatherDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
