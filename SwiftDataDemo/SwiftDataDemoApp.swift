@@ -10,9 +10,12 @@ import SwiftData
 
 @main
 struct SwiftDataDemoApp: App {
+    // 모델 컨테이너 설정
+    // 새로 생성한 ToDoItem 데이터 모델을 스키마에 추가
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            ToDoItem.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +28,8 @@ struct SwiftDataDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            ToDoItemView()
         }
         .modelContainer(sharedModelContainer)
     }
