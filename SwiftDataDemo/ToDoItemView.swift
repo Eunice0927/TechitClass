@@ -15,6 +15,9 @@ struct ToDoItemView: View {
     // ToDoItem 인스턴스를 가져오도록 지정
     @Query private var todoItems: [ToDoItem]
     
+    // 모델 컨텍스트를 얻어오는 변수를 선언
+    @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
         NavigationStack {
             List {
@@ -29,6 +32,12 @@ struct ToDoItemView: View {
                 }
             }
             .navigationTitle("To Do List")
+            // 임의의 할 일 항목을 추가하기 위한 도구 모음 버튼을 추가
+            .toolbar {
+                Button("", systemImage: "plus") {
+                    modelContext.insert( generateRandomTodoItem() )
+                }
+            }
             
         }
     }
