@@ -38,6 +38,13 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WeatherWidgetEntryView : View {
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(entity: Item.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Item>
+    
     var entry: Provider.Entry
 
     var body: some View {
@@ -47,17 +54,31 @@ struct WeatherWidgetEntryView : View {
 
             Text("Favorite Emoji:")
             Text(entry.configuration.favoriteEmoji)
+            
+            Text("\(items.count)")
+            ForEach(items) { item in
+                Text(item.timestamp!, formatter: itemFormatter)
+            }
         }
     }
 }
 
+private let itemFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .medium
+    return formatter
+}()
+
 struct WeatherWidget: Widget {
     let kind: String = "WeatherWidget"
+    let persistenceController = PersistenceController.shared
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             WeatherWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
