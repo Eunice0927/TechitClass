@@ -30,6 +30,12 @@ struct ToDoItemView: View {
                         }
                     }
                 }
+                // 삭제할 항목의 인덱스를 저장하는 인덱스 세트를 사용
+                .onDelete { indexSet in
+                    for index in indexSet {
+                        modelContext.delete(todoItems[index])
+                    }
+                }
             }
             .navigationTitle("To Do List")
             // 임의의 할 일 항목을 추가하기 위한 도구 모음 버튼을 추가
