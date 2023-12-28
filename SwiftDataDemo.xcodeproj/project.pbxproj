@@ -12,6 +12,7 @@
 		DE1B25B92B3CFACC00810E04 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B25B82B3CFACC00810E04 /* Item.swift */; };
 		DE1B25BB2B3CFACE00810E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1B25BA2B3CFACE00810E04 /* Assets.xcassets */; };
 		DE1B25BE2B3CFACE00810E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1B25BD2B3CFACE00810E04 /* Preview Assets.xcassets */; };
+		DE1B25C52B3CFD2A00810E04 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B25C42B3CFD2A00810E04 /* ToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		DE1B25B82B3CFACC00810E04 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DE1B25BA2B3CFACE00810E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1B25BD2B3CFACE00810E04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE1B25C42B3CFD2A00810E04 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				DE1B25B42B3CFACC00810E04 /* SwiftDataDemoApp.swift */,
 				DE1B25B62B3CFACC00810E04 /* ContentView.swift */,
+				DE1B25C42B3CFD2A00810E04 /* ToDoItem.swift */,
 				DE1B25B82B3CFACC00810E04 /* Item.swift */,
 				DE1B25BA2B3CFACE00810E04 /* Assets.xcassets */,
 				DE1B25BC2B3CFACE00810E04 /* Preview Content */,
@@ -142,6 +145,7 @@
 			files = (
 				DE1B25B72B3CFACC00810E04 /* ContentView.swift in Sources */,
 				DE1B25B92B3CFACC00810E04 /* Item.swift in Sources */,
+				DE1B25C52B3CFD2A00810E04 /* ToDoItem.swift in Sources */,
 				DE1B25B52B3CFACC00810E04 /* SwiftDataDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
