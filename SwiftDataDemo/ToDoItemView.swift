@@ -49,6 +49,11 @@ struct ToDoItemView: View {
     }
 }
 
+// SwiftData 및 인메모리 컨테이너로 미리보기
+// 컨테이너 데이터가 채워져 있지 않으면 미리보기에는 빈 Todo 목록만 표시
 #Preview {
     ToDoItemView()
+//        .modelContainer(for: ToDoItem.self)
+        // 미리보기 컨테이너를 사용
+        .modelContainer(previewContainer)
 }

@@ -32,3 +32,21 @@ func generateRandomTodoItem() -> ToDoItem {
     
     return ToDoItem(name: randomTask, isComplete: Bool.random())
 }
+
+// 샘플 데이터가 필요한 경우 미리보기용으로 특별히 사용자 정의 모델 컨테이너를 제작
+// 인메모리 구성으로 ModelContainer를 인스턴스화 하고 10개의 무작위 할 일 항목으로 컨테이너를 채움
+@MainActor
+let previewContainer: ModelContainer = {
+    do {
+        let container =  try ModelContainer(for: ToDoItem.self, 
+                                            configurations: .init(isStoredInMemoryOnly: true))
+        
+        for _ in 1...10 {
+            container.mainContext.insert( generateRandomTodoItem() )
+        }
+        
+        return container
+    } catch {
+        fatalError("Could not create ModelContainer: \(error)")
+    }
+}()
