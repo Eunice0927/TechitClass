@@ -44,11 +44,21 @@ struct SimpleEntry: TimelineEntry {
 
 struct WeatherWidgetEntryView : View {
     var entry: Provider.Entry
+    
+    // 위젯 뷰에 크기 지원 추가하기(적응형)
+    @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
         ZStack {
             Color("weatherBackgroundColor")
-            WeatherSubView(entry: entry)
+            
+            HStack {
+                WeatherSubView(entry: entry)
+                if widgetFamily == .systemMedium {
+                    Image(entry.image)
+                        .resizable()
+                }
+            }
         }
     }
 }
