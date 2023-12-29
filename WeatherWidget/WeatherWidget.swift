@@ -23,11 +23,22 @@ struct Provider: AppIntentTimelineProvider {
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WeatherEntry> {
         
+        // 위치 정보를 추출하여
+        var chosenLocation: LocationData
+        
+        if configuration.locations == .londonUK {
+            chosenLocation = .london
+        } else {
+            chosenLocation = .miami
+        }
+        
+        
         var entries: [WeatherEntry] = []
         var eventDate = Date()
         let halfMinute: TimeInterval = 1
         
-        for var entry in londonTimeline {
+        // 일치하는 타임라인을 반환
+        for var entry in chosenLocation.timeline {
             entry.date = eventDate
             eventDate += halfMinute
             entries.append(entry)
