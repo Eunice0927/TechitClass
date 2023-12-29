@@ -12,13 +12,13 @@ struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> WeatherEntry {
         WeatherEntry(date: Date(), city: "London", temperature: 89,
               description: "Thunder Storm", icon: "cloud.bolt.rain",
-                    image: "thunder")
+                     image: "thunder", url: thunderURL)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WeatherEntry {
         WeatherEntry(date: Date(), city: "London", temperature: 89,
               description: "Thunder Storm", icon: "cloud.bolt.rain",
-                    image: "thunder")
+                    image: "thunder", url: thunderURL)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WeatherEntry> {
@@ -60,6 +60,8 @@ struct WeatherWidgetEntryView : View {
                 }
             }
         }
+        // 위젯 엔트리 뷰에 URL 동작을 할당
+        .widgetURL(entry.url)
     }
 }
 
@@ -127,8 +129,8 @@ extension ConfigurationAppIntent {
 //    SimpleEntry(date: .now, configuration: .starEyes)
     WeatherEntry(date: Date(), city: "London", temperature: 89,
           description: "Thunder Storm", icon: "cloud.bolt.rain",
-                image: "thunder")
+                image: "thunder", url: thunderURL)
     WeatherEntry(date: Date(), city: "London", temperature: 95,
           description: "Hail Storm", icon: "cloud.hail",
-                image: "hail")
+                image: "hail", url: hailURL)
 }
