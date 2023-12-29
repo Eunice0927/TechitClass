@@ -8,6 +8,21 @@
 import Foundation
 import WidgetKit
 
+// 도시와 날씨 타임라인을 연결하는 방법을 제공하기 위해 위젯에 구조체를 추가
+struct LocationData: Identifiable {
+    let city: String
+    let timeline: [WeatherEntry]
+    
+    var id: String { city }
+    
+    static let london = LocationData(city: "London", timeline: londonTimeline)
+    static let miami = LocationData(city: "Miami", timeline: miamiTimeline)
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(city)
+    }
+}
+
 // 위젯 타임라인의 각 지점은 위젯 타임라인 엔트리 인스턴스로 표현
 // 표시될 데이터와 함께 위젯에 의해 표현되는 날짜와 시간이 포함
 struct WeatherEntry: TimelineEntry {
