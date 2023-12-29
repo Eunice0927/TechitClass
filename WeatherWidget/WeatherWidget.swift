@@ -88,6 +88,11 @@ struct WeatherWidget: Widget {
             WeatherWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        // 위젯 옵션에 내용을 기술(변경)
+        .configurationDisplayName("My Weather Widget")
+        .description("A demo weather widget.")
+        // 위젯 크기 지원
+        .supportedFamilies([WidgetFamily.systemSmall, .systemMedium])
     }
 }
 
