@@ -21,3 +21,7 @@
 |[SwiftDataDemo](/SwiftDataDemo)|2023.12.28|SwiftUI|- 데이터 모델 생성<br/>- 데이터 모델을 스키마에 추가<br/>- 항목 추가, 삭제<br/>- 미리보기용 모델 컨테이너 제작|
 |[WidgetCoreDataDemo](/WidgetCoreDataDemo)|2023.12.28|SwiftUI|- 위젯에서 코어데이터 연동<br/>- 코어데이터 변경 사항을 위젯에 바로 반영|
 |[WidgetDemo](/WidgetDemo)|2023.12.28 - 2023.12.29|SwiftUI|- 위젯 익스텐션 추가하기<br/>- 날씨 목록을 생성하고 클릭하면 상세화면으로 연결<br/>- 위젯 데이터 추가<br/>- 위젯에서 앱 딥링크 사용<br/>- 위젯에서 보여지는 내용의 옵션 변경(도시 변경)|
+
+# How to use
+- [레포지토리 내부의 한 개 폴더만 clone하고 싶을 경우](https://think-tech.tistory.com/22)
+- [하나의 레포지토리에 여러 레포지토리 올리기](https://velog.io/@049494/%ED%95%98%EB%82%98%EC%9D%98-%EB%A6%AC%ED%8F%AC%EC%A7%80%ED%86%A0%EB%A6%AC%EC%97%90-%EC%97%AC%EB%9F%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%98%AC%EB%A6%AC%EA%B8%B0)
