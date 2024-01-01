@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6948081D-ABA9-4349-8180-72E86580C28D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93EC9D15-C651-41CB-BB01-E79031DA4914"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoreDataDemo2/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "addProduct()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "93EC9D15-C651-41CB-BB01-E79031DA4914 - dd84d44350ec9885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoreDataDemo2.ContentView.addProduct() -&gt; ()"
+                  moduleName = "CoreDataDemo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyoung-park/XCodeProjects/Swift_Project/CoreDataDemo2/CoreDataDemo2/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "93EC9D15-C651-41CB-BB01-E79031DA4914 - e33d4c67d55fc75a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in CoreDataDemo2.ContentView.addProduct() -&gt; ()"
+                  moduleName = "CoreDataDemo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyoung-park/XCodeProjects/Swift_Project/CoreDataDemo2/CoreDataDemo2/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "93EC9D15-C651-41CB-BB01-E79031DA4914 - dd84d44350ec97ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoreDataDemo2.ContentView.addProduct() -&gt; ()"
+                  moduleName = "CoreDataDemo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junyoung-park/XCodeProjects/Swift_Project/CoreDataDemo2/CoreDataDemo2/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
