@@ -15,10 +15,15 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            Map(initialPosition: .region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.57861, longitude: 126.97722), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))))
+            // 표시할 특정 위치가 있는 경우
+            Map(initialPosition: .item(MKMapItem(placemark: .init(coordinate: .gyeongbokgung))))
         }
         .padding()
     }
+}
+
+extension CLLocationCoordinate2D {
+    static let gyeongbokgung = CLLocationCoordinate2D(latitude: 37.57861, longitude: 126.97722)
 }
 
 //#Preview {
