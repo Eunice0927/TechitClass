@@ -13,7 +13,7 @@ struct ContentView: View {
     
     @State private var position: MapCameraPosition = .automatic
     
-    let locationManager = LocationManager()
+    @StateObject var locationManager = LocationManager()
     
     var body: some View {
         VStack {
@@ -91,6 +91,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             locationManager.requestLocationPermission()
+            locationManager.getCurrentLocation()
         }
     }
 }

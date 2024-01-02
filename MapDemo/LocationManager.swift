@@ -8,10 +8,10 @@
 import Foundation
 import CoreLocation
 
-class LocationManager {
+class LocationManager: ObservableObject {
     
     let locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
+    @Published var currentLocation: CLLocation?
     
     func requestLocationPermission() {
         locationManager.requestWhenInUseAuthorization()
