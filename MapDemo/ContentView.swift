@@ -15,7 +15,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            Map()
+            Map(initialPosition: .region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.57861, longitude: 126.97722), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))))
         }
         .padding()
     }
