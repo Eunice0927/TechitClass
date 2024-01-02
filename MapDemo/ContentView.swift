@@ -51,6 +51,11 @@ struct ContentView: View {
 //                                position = .item(MKMapItem(placemark: .init(coordinate: .gyeongbokgung)))
                                 // 3D 관점으로 보기
                                 position = .camera(MapCamera(centerCoordinate: .gyeongbokgung, distance: 500, heading: 0, pitch: 50))
+                                
+                                // 리전으로 확대/축소
+//                                position = .region(MKCoordinateRegion(
+//                                    center: CLLocationCoordinate2D.gyeongbokgung,
+//                                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
                             }
                         } label: {
                             Text("경복궁")
@@ -74,6 +79,8 @@ struct ContentView: View {
 
                     }
                 }
+                // 지도 스타일 변경
+                .mapStyle(MapStyle.imagery(elevation: MapStyle.Elevation.realistic))
         }
         .padding()
     }
