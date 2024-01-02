@@ -7,16 +7,22 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 struct ContentView: View {
     
     @State private var position: MapCameraPosition = .automatic
+    
+    let locationManager = LocationManager()
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+            if let currentLocation = locationManager.currentLocation {
+                Text("\(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)")
+            }
             Text("Hello, world!")
             // 표시할 특정 위치가 있는 경우
 //            Map(initialPosition: .item(MKMapItem(placemark: .init(coordinate: .gyeongbokgung))))
@@ -83,6 +89,9 @@ struct ContentView: View {
                 .mapStyle(MapStyle.imagery(elevation: MapStyle.Elevation.realistic))
         }
         .padding()
+        .onAppear {
+            locationManager.requestLocationPermission()
+        }
     }
 }
 
