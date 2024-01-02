@@ -20,9 +20,28 @@ struct ContentView: View {
             Text("Hello, world!")
             // 표시할 특정 위치가 있는 경우
 //            Map(initialPosition: .item(MKMapItem(placemark: .init(coordinate: .gyeongbokgung))))
-            Map(position: $position)
+            Map(position: $position) {
+                Marker("첫 번째 관광위치", systemImage: "square.and.arrow.up.circle", coordinate: .gyeongbokgung)
+                    .tint(.blue)
+                
+                
+                Annotation("두 번째 관광위치", coordinate: .gwanghwamun, anchor: .bottom) {
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.indigo.opacity(0.5))
+                            .frame(width: 100, height: 100)
+                        
+                        Image(systemName: "eraser")
+                            .symbolEffect(.variableColor)
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(.indigo)
+                            .clipShape(Circle())
+                    }
+                }
+            }
                 .onAppear {
-                    position = .item(MKMapItem(placemark: .init(coordinate: .gyeongbokgung)))
+                    position = .item(MKMapItem(placemark: .init(coordinate: .gwanghwamun)))
                 }
                 .safeAreaInset(edge: .bottom) {
                     HStack {
