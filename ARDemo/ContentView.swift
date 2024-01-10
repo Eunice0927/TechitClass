@@ -22,11 +22,20 @@ struct ContentView : View {
                     Button {
                         viewModel.isShowingView = true
                     } label: {
-                        Text("Draw")
+                        ZStack {
+                            Circle()
+                                .foregroundColor(.blue)
+                                .frame(width: 50, height: 50)
+                            
+                            Image(systemName: "scribble.variable")
+                                .imageScale(.large)
+                                .foregroundStyle(.white)
+                        }
                     }
-
                 }
+                Spacer()
             }
+            .padding(50)
         }
         .sheet(
             isPresented: $viewModel.isShowingView,
