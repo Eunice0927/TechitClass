@@ -9,8 +9,31 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    
+    @EnvironmentObject var viewModel: ViewModel
+    
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack {
+            ARViewContainer().edgesIgnoringSafeArea(.all)
+            
+            HStack {
+                VStack {
+                    Spacer()
+                    Button {
+                        viewModel.isShowingView = true
+                    } label: {
+                        Text("Draw")
+                    }
+
+                }
+            }
+        }
+        .sheet(
+            isPresented: $viewModel.isShowingView,
+            onDismiss: { viewModel.isShowingView = false})  {
+                
+            DrawView().presentationDetents([.medium])
+        }
     }
 }
 
