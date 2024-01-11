@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // environmentObject() 수정자에 ViewModel 설정
 //        let viewModel = ViewModel()
 //        let contentView = ContentView().environmentObject(viewModel)
-        let contentView = Usdz3DView()
+//        let contentView = Usdz3DView()
+        let contentView = FocusARView()
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
