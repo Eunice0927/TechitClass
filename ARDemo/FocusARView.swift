@@ -11,20 +11,41 @@ import FocusEntity
 import ARKit
 
 struct FocusARView: View {
+    
+    @State private var isAddEndityAction = false
+    
     var body: some View {
-        ZStack {
-            FocusARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack(alignment: .bottom) {
+            FocusARViewContainer(isAction: $isAddEndityAction)
+                .edgesIgnoringSafeArea(.all)
+            
+            Button {
+                isAddEndityAction.toggle()
+            } label: {
+                Text("Place 3D Model")
+                    .font(.headline)
+                    .background(.blue)
+                    .foregroundStyle(.white)
+                    .padding()
+                    .cornerRadius(10)
+            }
+            .padding(.bottom, 50)
+
         }
     }
 }
 
 struct FocusARViewContainer: UIViewRepresentable {
+    @Binding var isAction: Bool
     
     func makeUIView(context: Context) -> FocusCustomARView {
         return FocusCustomARView()
     }
     
-    func updateUIView(_ uiView: FocusCustomARView, context: Context) {}
+    func updateUIView(_ uiView: FocusCustomARView, context: Context) {
+        isAction.toggle()
+        uiView.place3DModel()
+    }
     
 }
 
@@ -46,6 +67,15 @@ class FocusCustomARView: ARView {
         }
         
         self.session.run(config)
+    }
+    
+    func place3DModel() {
+        guard let focusEntity = self.focusEntity else { return }
+        
+        let modelEntity = try! ModelEntity.load(named: "toy_drummer_idle" + ".usdz")
+        let anchorEntity = AnchorEntity(world: focusEntity.position)
+        anchorEntity.addChild(modelEntity)
+        self.scene.addAnchor(anchorEntity)
     }
     
     @MainActor required dynamic init?(coder decoder: NSCoder) {
