@@ -63,8 +63,16 @@ class FocusCustomARView: ARView {
         config.environmentTexturing = .automatic
         
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.meshWithClassification) {
+            print("====== meshWithClassification ========")
             config.sceneReconstruction = .meshWithClassification
         }
+        if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+            print("====== personSegmentationWithDepth ========")
+            config.frameSemantics.insert(.personSegmentationWithDepth)
+        }
+        
+        // occlusion
+        self.environment.sceneUnderstanding.options.insert(.occlusion)
         
         self.session.run(config)
     }
