@@ -16,7 +16,9 @@ struct Usdz3DView: View {
     
     var body: some View {
         VStack {
-            Usdz3DARViewContainer().edgesIgnoringSafeArea(.all)
+            // 선택된 모델이 포함된 AR 뷰 컨테이너
+            Usdz3DARViewContainer(modelName: modelNames[selectedModelIndex])
+                .edgesIgnoringSafeArea(.all)
             
             // 모델 선택을 위한 선택기
             Picker("Select Model", selection: $selectedModelIndex) {
@@ -34,6 +36,8 @@ struct Usdz3DView: View {
 
 struct Usdz3DARViewContainer: UIViewRepresentable {
     
+    let modelName: String
+    
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
@@ -42,7 +46,23 @@ struct Usdz3DARViewContainer: UIViewRepresentable {
         
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        // 기존 앵커를 제거(초기화)
+        uiView.scene.anchors.removeAll()
+        
+        // 애셋 폴더에서 모델 로드
+        let modelEntity = try! ModelEntity.loadModel(named: modelName + ".usdz")
+        // 앵커 엔티티를 생성하고 모델을 추가
+        let anchorEntity = AnchorEntity()
+        anchorEntity.addChild(modelEntity)
+        
+        // 앵커 엔티티의 위치를 카메라 앞 0.5미터로 설정
+        anchorEntity.position = [0, 0, -0.5]
+        
+        // 장면에 앵커 엔티티 추가
+        uiView.scene.addAnchor(anchorEntity)
+        
+    }
         
 }
 
