@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 
 struct PurshaseView: View {
     
@@ -56,12 +57,34 @@ struct PurshaseView: View {
         }
     }
     
+    //  Siri에 단축어 제공하기
+    func makeDonation(symbol: String, quantity: String) {
+        let intent = BuyStockIntent()
+        
+        intent.quantity = quantity
+        intent.symbol = symbol
+        intent.suggestedInvocationPhrase = "Buy \(quantity) \(symbol)"
+        
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { error in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("Donation failed: %@" + error.localizedDescription)
+                }
+            } else {
+                print("Successfully donated interaction")
+            }
+        }
+    }
+    
     private func buyStock() {
         if (symbol == "" || quantity == "") {
             status = "Please enter a symbol and quantity"
         } else {
             if purchaseData.saveTransaction(symbol: symbol, quantity: quantity) {
                 status = "Purchase completed"
+                makeDonation(symbol: symbol, quantity: quantity)
             }
         }
     }

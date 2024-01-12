@@ -34,7 +34,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Buy ${quantity}shares of ${symbol}</string>
+					<string>Buy ${quantity} shares of ${symbol}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>7kKPfC</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
@@ -52,7 +52,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Buy ${quantity}shares of ${symbol}</string>
+					<string>Buy ${quantity} shares of ${symbol}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>NTWrDy</string>
 				</dict>
@@ -154,7 +154,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Successfully purchased ${quantity}${symbol}shares</string>
+						<string>Successfully purchased ${quantity} ${symbol} shares</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>arYG04</string>
 						<key>INIntentResponseCodeName</key>
