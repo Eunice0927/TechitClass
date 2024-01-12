@@ -11,6 +11,12 @@
 		DECEF3E22B51069F00BBA157 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3E12B51069F00BBA157 /* ContentView.swift */; };
 		DECEF3E42B5106A000BBA157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECEF3E32B5106A000BBA157 /* Assets.xcassets */; };
 		DECEF3E72B5106A000BBA157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECEF3E62B5106A000BBA157 /* Preview Assets.xcassets */; };
+		DECEF3EE2B51076F00BBA157 /* PurshaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3ED2B51076F00BBA157 /* PurshaseView.swift */; };
+		DECEF3F02B51078D00BBA157 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3EF2B51078D00BBA157 /* HistoryView.swift */; };
+		DECEF3F22B51080C00BBA157 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F12B51080C00BBA157 /* Purchase.swift */; };
+		DECEF3F42B5108BC00BBA157 /* PurchaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F32B5108BC00BBA157 /* PurchaseData.swift */; };
+		DECEF3F62B510A5500BBA157 /* PurchaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F52B510A5500BBA157 /* PurchaseStore.swift */; };
+		DECEF3F82B51134200BBA157 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F72B51134200BBA157 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		DECEF3E12B51069F00BBA157 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DECEF3E32B5106A000BBA157 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECEF3E62B5106A000BBA157 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DECEF3ED2B51076F00BBA157 /* PurshaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurshaseView.swift; sourceTree = "<group>"; };
+		DECEF3EF2B51078D00BBA157 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		DECEF3F12B51080C00BBA157 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		DECEF3F32B5108BC00BBA157 /* PurchaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseData.swift; sourceTree = "<group>"; };
+		DECEF3F52B510A5500BBA157 /* PurchaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStore.swift; sourceTree = "<group>"; };
+		DECEF3F72B51134200BBA157 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,12 @@
 			children = (
 				DECEF3DF2B51069F00BBA157 /* ShortcutDemoApp.swift */,
 				DECEF3E12B51069F00BBA157 /* ContentView.swift */,
+				DECEF3ED2B51076F00BBA157 /* PurshaseView.swift */,
+				DECEF3EF2B51078D00BBA157 /* HistoryView.swift */,
+				DECEF3F72B51134200BBA157 /* DetailView.swift */,
+				DECEF3F12B51080C00BBA157 /* Purchase.swift */,
+				DECEF3F32B5108BC00BBA157 /* PurchaseData.swift */,
+				DECEF3F52B510A5500BBA157 /* PurchaseStore.swift */,
 				DECEF3E32B5106A000BBA157 /* Assets.xcassets */,
 				DECEF3E52B5106A000BBA157 /* Preview Content */,
 			);
@@ -138,6 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DECEF3E22B51069F00BBA157 /* ContentView.swift in Sources */,
+				DECEF3F82B51134200BBA157 /* DetailView.swift in Sources */,
+				DECEF3F22B51080C00BBA157 /* Purchase.swift in Sources */,
+				DECEF3F42B5108BC00BBA157 /* PurchaseData.swift in Sources */,
+				DECEF3F02B51078D00BBA157 /* HistoryView.swift in Sources */,
+				DECEF3F62B510A5500BBA157 /* PurchaseStore.swift in Sources */,
+				DECEF3EE2B51076F00BBA157 /* PurshaseView.swift in Sources */,
 				DECEF3E02B51069F00BBA157 /* ShortcutDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
