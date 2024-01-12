@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PurchaseStore {
     
-    @AppStorage("demostorage", store: UserDefaults(suiteName: "YOUR APP GROUP NAME HERE")) var store: Data = Data()
+    @AppStorage("demostorage", store: UserDefaults(suiteName: "group.com.io3.shortcutdemo")) var store: Data = Data()
     
     var purchases: [Purchase] = []
     

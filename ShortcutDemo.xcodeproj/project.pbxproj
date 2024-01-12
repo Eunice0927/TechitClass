@@ -27,6 +27,10 @@
 		DECEF4222B51183800BBA157 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DECEF4212B51183800BBA157 /* Intents.intentdefinition */; };
 		DECEF4232B51183800BBA157 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DECEF4212B51183800BBA157 /* Intents.intentdefinition */; };
 		DECEF4242B51183800BBA157 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DECEF4212B51183800BBA157 /* Intents.intentdefinition */; };
+		DECEF4272B51218300BBA157 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F12B51080C00BBA157 /* Purchase.swift */; };
+		DECEF4282B51218700BBA157 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F12B51080C00BBA157 /* Purchase.swift */; };
+		DECEF4292B5121B400BBA157 /* PurchaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F32B5108BC00BBA157 /* PurchaseData.swift */; };
+		DECEF42A2B5121B500BBA157 /* PurchaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF3F32B5108BC00BBA157 /* PurchaseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,6 +345,8 @@
 			files = (
 				DECEF4232B51183800BBA157 /* Intents.intentdefinition in Sources */,
 				DECEF4042B51179B00BBA157 /* IntentHandler.swift in Sources */,
+				DECEF4292B5121B400BBA157 /* PurchaseData.swift in Sources */,
+				DECEF4272B51218300BBA157 /* Purchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +356,8 @@
 			files = (
 				DECEF4242B51183800BBA157 /* Intents.intentdefinition in Sources */,
 				DECEF40F2B51179B00BBA157 /* IntentViewController.swift in Sources */,
+				DECEF42A2B5121B500BBA157 /* PurchaseData.swift in Sources */,
+				DECEF4282B51218700BBA157 /* Purchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
