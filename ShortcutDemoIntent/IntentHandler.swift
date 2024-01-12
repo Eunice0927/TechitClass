@@ -56,6 +56,12 @@ class IntentHandler: INExtension, BuyStockIntentHandling {
         return result
     }
     
+    // 확인 메서드
+    public func confirm(intent: BuyStockIntent, completion: @escaping (BuyStockIntentResponse) -> Void) {
+        
+        completion(BuyStockIntentResponse(code: .ready, userActivity: nil))
+    }
+    
     func resolveSymbol(for intent: BuyStockIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
         
         if let symbol = intent.symbol {
