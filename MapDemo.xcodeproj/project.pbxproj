@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE51DD282B5610E600EB1D14 /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD272B5610E600EB1D14 /* MapRouteView.swift */; };
 		DE5C6F582B43A1E20058A9ED /* MapDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C6F572B43A1E20058A9ED /* MapDemoApp.swift */; };
 		DE5C6F5A2B43A1E20058A9ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C6F592B43A1E20058A9ED /* ContentView.swift */; };
 		DE5C6F5C2B43A1E40058A9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5C6F5B2B43A1E40058A9ED /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE51DD272B5610E600EB1D14 /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
 		DE5C6F542B43A1E20058A9ED /* MapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C6F572B43A1E20058A9ED /* MapDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoApp.swift; sourceTree = "<group>"; };
 		DE5C6F592B43A1E20058A9ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				DE5C6F572B43A1E20058A9ED /* MapDemoApp.swift */,
 				DE5C6F592B43A1E20058A9ED /* ContentView.swift */,
+				DE51DD272B5610E600EB1D14 /* MapRouteView.swift */,
 				DE5C6F5B2B43A1E40058A9ED /* Assets.xcassets */,
 				DE5C6F5D2B43A1E40058A9ED /* Preview Content */,
 				DE5C6F652B43D0670058A9ED /* LocationManager.swift */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5C6F5A2B43A1E20058A9ED /* ContentView.swift in Sources */,
+				DE51DD282B5610E600EB1D14 /* MapRouteView.swift in Sources */,
 				DE5C6F582B43A1E20058A9ED /* MapDemoApp.swift in Sources */,
 				DE5C6F662B43D0670058A9ED /* LocationManager.swift in Sources */,
 			);
