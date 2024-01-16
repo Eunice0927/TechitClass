@@ -12,7 +12,8 @@ struct MapDemoApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            MapRouteView()
+//            MapRouteView()
+            SwiftUIMapRouteView()
         }
     }
 }
