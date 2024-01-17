@@ -76,9 +76,30 @@ struct NaverMap: UIViewRepresentable {
         marker.position = coord
         marker.captionText = self.coord.name
         marker.mapView = uiView.mapView
+        
+        
+        // 정보 창 : 마커의 위 또는 지도의 특정 지점에 부가적인 정보를 나타내기 위한 오버레이
+        // https://navermaps.github.io/ios-map-sdk/guide-ko/5-3.html
+        // 정보 창을 마커와 연결
+        let infoWindow = NMFInfoWindow()
+        let dataSource = NMFInfoWindowDefaultTextSource.data()
+        dataSource.title = "정보 창 내용/마커를 탭하면 닫힘"
+        infoWindow.dataSource = dataSource
+        infoWindow.open(with: marker)
+        
         // 마커 탭(클릭)했을 때 동작
         marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
             print("Tap marker \(self.coord.name)")
+            // 정보 창과 상호작용
+            if let marker = overlay as? NMFMarker {
+                if marker.infoWindow == nil {
+                    // 현재 마커에 정보 창이 열려있지 않을 경우 엶
+                    infoWindow.open(with: marker)
+                } else {
+                    // 이미 현재 마커에 정보 창이 열려있을 경우 닫음
+                    infoWindow.close()
+                }
+            }
             return true
         }
     }
