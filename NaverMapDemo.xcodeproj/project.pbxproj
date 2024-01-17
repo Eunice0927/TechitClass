@@ -11,14 +11,22 @@
 		DE51DD3A2B56586000EB1D14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD392B56586000EB1D14 /* ContentView.swift */; };
 		DE51DD3C2B56586300EB1D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51DD3B2B56586300EB1D14 /* Assets.xcassets */; };
 		DE51DD3F2B56586300EB1D14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51DD3E2B56586300EB1D14 /* Preview Assets.xcassets */; };
+		DE51DD462B5659AF00EB1D14 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE51DD452B5659AF00EB1D14 /* ApiKeys.plist */; };
+		DE51DD482B565A4300EB1D14 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD472B565A4300EB1D14 /* ApiKeys.swift */; };
+		FBDE46DDD9DC5567FD1A0017 /* Pods_NaverMapDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC6D385E3A48F96A7CE7CD0 /* Pods_NaverMapDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CC6D385E3A48F96A7CE7CD0 /* Pods_NaverMapDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaverMapDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FB4C015B20FC2AA5D2D606 /* Pods-NaverMapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaverMapDemo.debug.xcconfig"; path = "Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DE51DD342B56586000EB1D14 /* NaverMapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverMapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE51DD372B56586000EB1D14 /* NaverMapDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapDemoApp.swift; sourceTree = "<group>"; };
 		DE51DD392B56586000EB1D14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE51DD3B2B56586300EB1D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE51DD3E2B56586300EB1D14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE51DD452B5659AF00EB1D14 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		DE51DD472B565A4300EB1D14 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		ED560A3ADD5C9B3F6742B336 /* Pods-NaverMapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaverMapDemo.release.xcconfig"; path = "Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +34,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDE46DDD9DC5567FD1A0017 /* Pods_NaverMapDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12AACE0709B5883DB36E8449 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6D385E3A48F96A7CE7CD0 /* Pods_NaverMapDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D52081B9E31E55AD104AA169 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99FB4C015B20FC2AA5D2D606 /* Pods-NaverMapDemo.debug.xcconfig */,
+				ED560A3ADD5C9B3F6742B336 /* Pods-NaverMapDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DE51DD2B2B56586000EB1D14 = {
 			isa = PBXGroup;
 			children = (
 				DE51DD362B56586000EB1D14 /* NaverMapDemo */,
 				DE51DD352B56586000EB1D14 /* Products */,
+				D52081B9E31E55AD104AA169 /* Pods */,
+				12AACE0709B5883DB36E8449 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +81,8 @@
 			children = (
 				DE51DD372B56586000EB1D14 /* NaverMapDemoApp.swift */,
 				DE51DD392B56586000EB1D14 /* ContentView.swift */,
+				DE51DD472B565A4300EB1D14 /* ApiKeys.swift */,
+				DE51DD452B5659AF00EB1D14 /* ApiKeys.plist */,
 				DE51DD3B2B56586300EB1D14 /* Assets.xcassets */,
 				DE51DD3D2B56586300EB1D14 /* Preview Content */,
 			);
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE51DD422B56586300EB1D14 /* Build configuration list for PBXNativeTarget "NaverMapDemo" */;
 			buildPhases = (
+				765DD4274366ADA38AC7413A /* [CP] Check Pods Manifest.lock */,
 				DE51DD302B56586000EB1D14 /* Sources */,
 				DE51DD312B56586000EB1D14 /* Frameworks */,
 				DE51DD322B56586000EB1D14 /* Resources */,
+				94B36246E30856F38D8793FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +159,53 @@
 			files = (
 				DE51DD3F2B56586300EB1D14 /* Preview Assets.xcassets in Resources */,
 				DE51DD3C2B56586300EB1D14 /* Assets.xcassets in Resources */,
+				DE51DD462B5659AF00EB1D14 /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		765DD4274366ADA38AC7413A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NaverMapDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94B36246E30856F38D8793FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE51DD302B56586000EB1D14 /* Sources */ = {
@@ -139,6 +214,7 @@
 			files = (
 				DE51DD3A2B56586000EB1D14 /* ContentView.swift in Sources */,
 				DE51DD382B56586000EB1D14 /* NaverMapDemoApp.swift in Sources */,
+				DE51DD482B565A4300EB1D14 /* ApiKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +258,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -245,7 +321,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -266,6 +342,7 @@
 		};
 		DE51DD432B56586300EB1D14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99FB4C015B20FC2AA5D2D606 /* Pods-NaverMapDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +372,7 @@
 		};
 		DE51DD442B56586300EB1D14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED560A3ADD5C9B3F6742B336 /* Pods-NaverMapDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
