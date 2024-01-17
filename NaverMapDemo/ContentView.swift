@@ -57,14 +57,21 @@ struct NaverMap: UIViewRepresentable {
         // NMGLatLng: 하나의 위경도 좌표를 나타내는 클래스
         // https://navermaps.github.io/ios-map-sdk/guide-ko/2-2.html
         let coord = NMGLatLng(lat: coord.1, lng: coord.0)
+        
         // 카메라 이동
         // https://navermaps.github.io/ios-map-sdk/guide-ko/3-2.html
         let cameraUpdate = NMFCameraUpdate(scrollTo: coord)
         cameraUpdate.animation = .fly
         cameraUpdate.animationDuration = 2
         uiView.mapView.moveCamera(cameraUpdate)
+        
+        // 위치 오버레이 : 사용자의 현재 위치를 나타내는 데 특화된 오버레이
+        // https://navermaps.github.io/ios-map-sdk/guide-ko/5-1.html
+        // https://navermaps.github.io/ios-map-sdk/guide-ko/5-5.html
+        let locationOverlay = uiView.mapView.locationOverlay
+        locationOverlay.hidden = false
+        locationOverlay.location = coord
     }
-    
     
     class Coordinator: NSObject, NMFMapViewCameraDelegate {
         var coord: (Double, Double)
