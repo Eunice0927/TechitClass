@@ -62,9 +62,12 @@ struct NaverMap: UIViewRepresentable {
         context.coordinator.updateMapView(coord: coord)
     }
     
+    
     class Coordinator: NSObject, NMFMapViewCameraDelegate {
         
         var coord: MyCoord = MyCoord("", 0.0, 0.0)
+        var markers: [NMFMarker] = []
+        var infoWindows: [NMFInfoWindow] = []
         
         // NMFNaverMapView: 지도 객체 생성
         // https://navermaps.github.io/ios-map-sdk/guide-ko/2-1.html
@@ -87,6 +90,9 @@ struct NaverMap: UIViewRepresentable {
         
         func updateMapView(coord: MyCoord) {
             self.coord = coord
+            // 마커와 정보 창을 새롭게 추가하기 위해 기존 내용을 삭제
+            removeAllMakers()
+            removeAllInfoWindows()
             
             // NMGLatLng: 하나의 위경도 좌표를 나타내는 클래스
             // https://navermaps.github.io/ios-map-sdk/guide-ko/2-2.html
@@ -112,6 +118,7 @@ struct NaverMap: UIViewRepresentable {
             marker.position = coord
             marker.captionText = self.coord.name
             marker.mapView = view.mapView
+            markers.append(marker)
             
             
             // 정보 창 : 마커의 위 또는 지도의 특정 지점에 부가적인 정보를 나타내기 위한 오버레이
@@ -138,6 +145,20 @@ struct NaverMap: UIViewRepresentable {
                 }
                 return true
             }
+        }
+        
+        private func removeAllMakers() {
+            markers.forEach { marker in
+                marker.mapView = nil
+            }
+            markers.removeAll()
+        }
+        
+        private func removeAllInfoWindows() {
+            infoWindows.forEach { infoWindow in
+                infoWindow.mapView = nil
+            }
+            infoWindows.removeAll()
         }
         
         func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool) {
