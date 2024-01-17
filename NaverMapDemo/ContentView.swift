@@ -35,6 +35,10 @@ struct NaverMap: UIViewRepresentable {
     
     var coord: (Double, Double)
     
+    func makeCoordinator() -> Coordinator {
+        Coordinator(coord)
+    }
+    
     func makeUIView(context: Context) -> NMFNaverMapView {
         // NMFNaverMapView: 지도 객체 생성
         // https://navermaps.github.io/ios-map-sdk/guide-ko/2-1.html
@@ -42,6 +46,9 @@ struct NaverMap: UIViewRepresentable {
         view.showZoomControls = false
         view.mapView.positionMode = .direction
         view.mapView.zoomLevel = 17
+        
+        // 카메라 델리게이트 추가(이벤트 처리)
+        view.mapView.addCameraDelegate(delegate: context.coordinator)
         
         return view
     }
@@ -57,6 +64,25 @@ struct NaverMap: UIViewRepresentable {
         cameraUpdate.animationDuration = 2
         uiView.mapView.moveCamera(cameraUpdate)
     }
+    
+    
+    class Coordinator: NSObject, NMFMapViewCameraDelegate {
+        var coord: (Double, Double)
+        init(_ coord: (Double, Double)) {
+            self.coord = coord
+        }
+        
+        func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool) {
+            // 카메라 이동이 시작되기 전 호출
+            print("============== 카메라 변경전 - reason: \(reason)")
+        }
+        
+        func mapView(_ mapView: NMFMapView, cameraIsChangingByReason reason: Int) {
+            // 카메라의 위치가 변경되면 호출
+            print("카메라 변경후 - reason: \(reason)")
+        }
+    }
+    
 }
 
 //#Preview {
