@@ -39,6 +39,20 @@ struct ContentView: View {
 class GameScene: SKScene {
     override func didMove(to view: SKView) {
         print("You are in the game scene!")
+        // 노드에 물리 시뮬레이션을 추가하는 객체
+        // https://developer.apple.com/documentation/spritekit/skphysicsbody
+        // https://developer.apple.com/documentation/spritekit/sknode/getting_started_with_physics_bodies
+        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+    }
+    
+    // 탭할 때마다 떨어지는 상자가 생성되고 부딪히는 물리 효과 추가
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let box = SKSpriteNode(color: .red, size: CGSize(width: 50, height: 50))
+        box.position = location
+        box.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        addChild(box)
     }
 }
 
