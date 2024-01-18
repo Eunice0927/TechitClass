@@ -14,6 +14,8 @@
 		DE51DD462B5659AF00EB1D14 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE51DD452B5659AF00EB1D14 /* ApiKeys.plist */; };
 		DE51DD482B565A4300EB1D14 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD472B565A4300EB1D14 /* ApiKeys.swift */; };
 		DE51DD4A2B57B71A00EB1D14 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD492B57B71A00EB1D14 /* LocationManager.swift */; };
+		DE51DD4C2B58E86500EB1D14 /* NaverMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD4B2B58E86500EB1D14 /* NaverMap.swift */; };
+		DE51DD4E2B58E8DE00EB1D14 /* MyCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51DD4D2B58E8DE00EB1D14 /* MyCoord.swift */; };
 		FBDE46DDD9DC5567FD1A0017 /* Pods_NaverMapDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC6D385E3A48F96A7CE7CD0 /* Pods_NaverMapDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		DE51DD452B5659AF00EB1D14 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		DE51DD472B565A4300EB1D14 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		DE51DD492B57B71A00EB1D14 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DE51DD4B2B58E86500EB1D14 /* NaverMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMap.swift; sourceTree = "<group>"; };
+		DE51DD4D2B58E8DE00EB1D14 /* MyCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoord.swift; sourceTree = "<group>"; };
 		ED560A3ADD5C9B3F6742B336 /* Pods-NaverMapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaverMapDemo.release.xcconfig"; path = "Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,8 @@
 				DE51DD372B56586000EB1D14 /* NaverMapDemoApp.swift */,
 				DE51DD392B56586000EB1D14 /* ContentView.swift */,
 				DE51DD492B57B71A00EB1D14 /* LocationManager.swift */,
+				DE51DD4B2B58E86500EB1D14 /* NaverMap.swift */,
+				DE51DD4D2B58E8DE00EB1D14 /* MyCoord.swift */,
 				DE51DD472B565A4300EB1D14 /* ApiKeys.swift */,
 				DE51DD452B5659AF00EB1D14 /* ApiKeys.plist */,
 				DE51DD3B2B56586300EB1D14 /* Assets.xcassets */,
@@ -216,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE51DD4A2B57B71A00EB1D14 /* LocationManager.swift in Sources */,
+				DE51DD4E2B58E8DE00EB1D14 /* MyCoord.swift in Sources */,
+				DE51DD4C2B58E86500EB1D14 /* NaverMap.swift in Sources */,
 				DE51DD3A2B56586000EB1D14 /* ContentView.swift in Sources */,
 				DE51DD382B56586000EB1D14 /* NaverMapDemoApp.swift in Sources */,
 				DE51DD482B565A4300EB1D14 /* ApiKeys.swift in Sources */,
