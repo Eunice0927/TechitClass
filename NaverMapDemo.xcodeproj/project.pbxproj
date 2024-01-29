@@ -22,6 +22,7 @@
 /* Begin PBXFileReference section */
 		5CC6D385E3A48F96A7CE7CD0 /* Pods_NaverMapDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaverMapDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FB4C015B20FC2AA5D2D606 /* Pods-NaverMapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaverMapDemo.debug.xcconfig"; path = "Target Support Files/Pods-NaverMapDemo/Pods-NaverMapDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0215672B67390D00EB41BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DE51DD342B56586000EB1D14 /* NaverMapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverMapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE51DD372B56586000EB1D14 /* NaverMapDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapDemoApp.swift; sourceTree = "<group>"; };
 		DE51DD392B56586000EB1D14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		DE51DD362B56586000EB1D14 /* NaverMapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DE0215672B67390D00EB41BA /* Info.plist */,
 				DE51DD372B56586000EB1D14 /* NaverMapDemoApp.swift */,
 				DE51DD392B56586000EB1D14 /* ContentView.swift */,
 				DE51DD492B57B71A00EB1D14 /* LocationManager.swift */,
@@ -364,12 +366,15 @@
 				DEVELOPMENT_TEAM = 654S523AG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NaverMapDemo/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "지도상의 현재 위치를 가져오기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "지도상의 현재 위치를 가져오기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,12 +400,15 @@
 				DEVELOPMENT_TEAM = 654S523AG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NaverMapDemo/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "지도상의 현재 위치를 가져오기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "지도상의 현재 위치를 가져오기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

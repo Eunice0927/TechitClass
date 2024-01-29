@@ -20,14 +20,29 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        
+        // 백그라운드 있을 때 위치 업데이트 허용
+        locationManager.allowsBackgroundLocationUpdates = true
+        // 위치 업데이트 자동 종료 거부
+        locationManager.pausesLocationUpdatesAutomatically = false
+        // 백그라운드 위치 인디케이터 노출
+        locationManager.showsBackgroundLocationIndicator = true
+        // 위치 정확도 최고 설정
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // 위치 권한 요청
+        locationManager.requestAlwaysAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
     }
     
     func getCurrentLocation() {
         // 현재 위치를 일회성으로 전달
         // https://developer.apple.com/documentation/corelocation/cllocationmanager/1620548-requestlocation
-        locationManager.requestLocation()
-        currentLocation = locationManager.location
+        if CLLocationManager.locationServicesEnabled() {
+            // 위치 서비스 사용이 가능하다면 locationManager에 현재 위치를 요청
+            locationManager.requestLocation()
+            currentLocation = locationManager.location
+        }
     }
     
     func startUpdatingLocation() {
@@ -45,6 +60,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     // 지속적으로 위치 데이터 업데이트
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.first
+        print("\(String(describing: currentLocation?.timestamp))")
     }
     
     // 오류 처리: 문제가 있으면 오류를 출력
