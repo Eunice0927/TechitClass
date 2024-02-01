@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE19B70F2B6B28EE00ADD8EA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19B70E2B6B28EE00ADD8EA /* Helper.swift */; };
 		DE87A7862B4F71AA00D5740D /* toy_car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = DE87A7852B4F71AA00D5740D /* toy_car.usdz */; };
 		DE87A7882B4F71B500D5740D /* robot_walk_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = DE87A7872B4F71B500D5740D /* robot_walk_idle.usdz */; };
 		DE87A78A2B4F71CB00D5740D /* toy_biplane_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = DE87A7892B4F71CB00D5740D /* toy_biplane_idle.usdz */; };
@@ -21,9 +22,11 @@
 		DEAB84CE2B4E29E000B4CECE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEAB84CD2B4E29E000B4CECE /* Preview Assets.xcassets */; };
 		DEAB84D52B4E570100B4CECE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB84D42B4E570100B4CECE /* ViewModel.swift */; };
 		DEAB84D72B4E598000B4CECE /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB84D62B4E598000B4CECE /* DrawView.swift */; };
+		DEC5AD122B67788600EA3721 /* EyeTrackerARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5AD112B67788600EA3721 /* EyeTrackerARView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE19B70E2B6B28EE00ADD8EA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		DE87A7852B4F71AA00D5740D /* toy_car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_car.usdz; sourceTree = "<group>"; };
 		DE87A7872B4F71B500D5740D /* robot_walk_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot_walk_idle.usdz; sourceTree = "<group>"; };
 		DE87A7892B4F71CB00D5740D /* toy_biplane_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane_idle.usdz; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		DEAB84CD2B4E29E000B4CECE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DEAB84D42B4E570100B4CECE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DEAB84D62B4E598000B4CECE /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		DEC5AD112B67788600EA3721 /* EyeTrackerARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				DE87A78F2B4F76D100D5740D /* Usdz3DView.swift */,
 				DE87A7942B4F85BE00D5740D /* FocusARView.swift */,
 				DEAB84D62B4E598000B4CECE /* DrawView.swift */,
+				DEC5AD112B67788600EA3721 /* EyeTrackerARView.swift */,
+				DE19B70E2B6B28EE00ADD8EA /* Helper.swift */,
 				DE87A7842B4F716A00D5740D /* Assets */,
 				DEAB84CA2B4E29E000B4CECE /* Assets.xcassets */,
 				DEAB84CC2B4E29E000B4CECE /* Preview Content */,
@@ -190,7 +196,9 @@
 				DEAB84D72B4E598000B4CECE /* DrawView.swift in Sources */,
 				DEAB84C72B4E29DE00B4CECE /* AppDelegate.swift in Sources */,
 				DE87A7952B4F85BE00D5740D /* FocusARView.swift in Sources */,
+				DEC5AD122B67788600EA3721 /* EyeTrackerARView.swift in Sources */,
 				DE87A7902B4F76D100D5740D /* Usdz3DView.swift in Sources */,
+				DE19B70F2B6B28EE00ADD8EA /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

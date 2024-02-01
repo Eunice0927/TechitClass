@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let viewModel = ViewModel()
 //        let contentView = ContentView().environmentObject(viewModel)
 //        let contentView = Usdz3DView()
-        let contentView = FocusARView()
+//        let contentView = FocusARView()
+        let contentView = EyeTrackerARView()
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
