@@ -210,8 +210,26 @@ final class CombineDemoTests: XCTestCase {
         currentStatus.value = true
     }
     
+    /**
+     Cancellable : 데이터 발행 중 cancel() 메서드가 호출되었을 때 모든 파이프라인이  종료
+     - 사용자가 데이터 로딩을 기다리던 도중 뒤로 간다거나 취소를 누른는 경우처럼 스트림을 중단 해야할 때 사용
+     */
+    func testExample9() throws {
+        let exSubject = PassthroughSubject<String, Never>()
+        
+        let canceleable = exSubject
+            .sink { data in
+                print("data \(data)")
+            }
+        
+        exSubject.send("A")
+        exSubject.send("v")
+        canceleable.cancel()
+        exSubject.send("B")
+    }
     
-
+    
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
