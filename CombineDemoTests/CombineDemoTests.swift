@@ -127,6 +127,90 @@ final class CombineDemoTests: XCTestCase {
         
     }
     
+    /**
+     Operator : 생성자와 소비자 중간에 위치하여 데이터 스트림을 가공해주는 역할
+     - Mapping Element : 주로 데이터를 다른 데이터 타입으로 변형하는 역할
+       - ex) scan, setFailureType, map, flatMap
+     - Filtering Element :  조건에 맞는 데이터만 허용
+       - ex) compactMap, replaceEmpty, filter, replaceError, removeDuplicates
+     - Reduce Element : 데이터 스트림을 모아 출력
+       - ex) collect, reduce, tryReduce, ignoreOutput
+     - Mathematic operations on elements : 숫자 시퀀스값과 관련된 스트림을 제어
+       - ex) max, count, min
+     - Sequence Elements : 데이터 시퀀스를 변형할 때 사용
+       - ex) prepend, firstWhere, tryFirstWhere, first, lastWhere, tryLastWhere, last, dropWhile
+     */
+    func testExample6() throws {
+        // Publisher가 String타입이 아닌 Int 타입인 경우 서로 받는 타입이 다르기 때문에 에러가 발생
+//        let publisher = (1...10).publisher
+//        
+//        let subscriber = CustomSubscriber()
+//        publisher.subscribe(subscriber)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+        
+        (1...10).publisher
+            .map { i in
+                formatter.string(from: NSNumber(integerLiteral: i)) ?? ""
+            }
+            .sink { data in
+                print(data)
+            }
+    }
+    
+    /**
+     Subject : Publsiher의 일종으로 외부에서 안으로 데이터를 주입시킬 수 있음
+     - PassthroughSubject 빌트인 타입 :
+       - 상태값을 가지지 않는 Subject
+     - CurrentValueSubject 빌트인 타입 :
+       - 상태값을 가지는 Subject로 주로 UI의 상태값에 따라 데이터를 발행할 때 사용하기 유용
+     */
+    func testExample7() throws {
+        let subject = PassthroughSubject<String, Error>()
+        
+        subject.sink { completion in
+            switch completion {
+            case .failure:
+                print("Error 발생")
+            case .finished:
+                print("데이터 받음(발행)이 종료")
+            }
+        } receiveValue: { data in
+            print("data:", data)
+        }
+        
+        // 데이터 외부 제공(발행)
+        subject.send("A")
+        subject.send("V")
+        subject.send("B")
+        
+        // 데이터 받음(발행)이 종료
+        subject.send(completion: .finished)
+
+    }
+    
+    func testExample8() throws {
+        let currentStatus = CurrentValueSubject<Bool, Error>(true)
+        
+        currentStatus.sink { completion in
+            switch completion {
+            case .failure:
+                print("Error 발생")
+            case .finished:
+                print("데이터 받음(발행)이 종료")
+            }
+        } receiveValue: { data in
+            print("data:", data)
+        }
+        
+        print("초깃값 \(currentStatus.value)")
+        currentStatus.send(false)
+        print("변경후 \(currentStatus.value)")
+        currentStatus.value = true
+    }
+    
+    
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
