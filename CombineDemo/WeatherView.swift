@@ -10,7 +10,6 @@ import SwiftUI
 struct WeatherView: View {
     
     @StateObject var network = WeatherAPI.shared
-//    @State var isModaling: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -32,7 +31,7 @@ struct WeatherView: View {
             }.navigationTitle("\(network.weatherResults?.name ?? "") Weather")
         }
         .onAppear() {
-            network.feachData()
+            network.feachDataEx()
         }
     }
 }
