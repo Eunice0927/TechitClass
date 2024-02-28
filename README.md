@@ -21,6 +21,13 @@
 |[SwiftDataDemo](/SwiftDataDemo)|2023.12.28|SwiftUI|- 데이터 모델 생성<br/>- 데이터 모델을 스키마에 추가<br/>- 항목 추가, 삭제<br/>- 미리보기용 모델 컨테이너 제작|
 |[WidgetCoreDataDemo](/WidgetCoreDataDemo)|2023.12.28|SwiftUI|- 위젯에서 코어데이터 연동<br/>- 코어데이터 변경 사항을 위젯에 바로 반영|
 |[WidgetDemo](/WidgetDemo)|2023.12.28 - 2023.12.29|SwiftUI|- 위젯 익스텐션 추가하기<br/>- 날씨 목록을 생성하고 클릭하면 상세화면으로 연결<br/>- 위젯 데이터 추가<br/>- 위젯에서 앱 딥링크 사용<br/>- 위젯에서 보여지는 내용의 옵션 변경(도시 변경)|
+|[FirebaseDemo](/FirebaseDemo)|2024.01.04|SwiftUI|- Firebase Realtime Database와 Cloud Firestore 시작<br/>- Cloud Firestore로 실시간 업데이트 가져오기 모델과 화면<br/>- Firebase의 listAll() 메서드를 사용하여 저장소의 모든 항목을 나열<br/>- 항목(Storage 파일) 삭제<br/>- FirebaseAuth 간단 로그인 확인<br/>- 로그아웃과 탈퇴 처리 확인<br/>- Firebase Auth signIn(가입) 사용자 추가<br/>- Firestore 위도,경도 저장하고 가져오기 샘플<br/>- Firestore를 이용한 채팅 예제 추가|
+|[MapDemo](/MapDemo)|2024.01.02|SwiftUI|- MapKit으로 지도에 marker 추가<br/>- CoreLocation으로 현재 위치 가져오기|
+|[ARDemo](/ARDemo)|2024.01.10|SwiftUI|- 텍스처에 사용될 그림 그리기 기능 추가<br/>- 3D 모델 추가하여 화면 구성<br/>- 탭하면 FocusEntity 위치에 3D 엔티티를 배치<br/>- 시선 추적과 얼굴과의 거리를 표시하는 예제|
+|[ShortcutDemo](/ShortcutDemo)|2024.01.12|SwiftUI|- 시리로 단축어 작업 수행|
+|[SpriteKitSwiftUIDemo](/SpriteKitSwiftUIDemo)|2024.01.18|SwiftUI|- 탭할 때마다 떨어지는 상자가 생성되고 부딪히는 물리 효과 추가|
+|[NaverMapDemo](/NaverMapDemo)|2024.01.17|SwiftUI|- 사용자의 현재 위치를 나타내는 위치 오버레이 표시<br/>- CoreLocation을 이용한 현재 위치를 지속적으로 가져와서 지도에 표시하기<br/>- 정보 창(마커의 위 또는 지도의 특정 지점에 부가적인 정보를 나타내기 위한 오버레이) 추가<br/>- 이동경로 그리기(경로선 오버레이)|
+|[CombineDemo](/CombineDemo)|2024.01.15 - 2024.01.16|SwiftUI|- Combine과 Publisher, Subscriber 소개<br/>- Operator, Subject, Cancellable 소개<br/>- 네트워크에 Combine 이용 예제를 위한 날씨 API 호출<br/>- API 호출 네트워크에 Combine 이용 예제 추가|
 
 # How to use
 - [레포지토리 내부의 한 개 폴더만 clone하고 싶을 경우](https://think-tech.tistory.com/22)
