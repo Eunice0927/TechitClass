@@ -25,7 +25,7 @@
 |[MapDemo](/MapDemo)|2024.01.02|SwiftUI|- MapKit으로 지도에 marker 추가<br/>- CoreLocation으로 현재 위치 가져오기|
 |[ARDemo](/ARDemo)|2024.01.10|SwiftUI|- 텍스처에 사용될 그림 그리기 기능 추가<br/>- 3D 모델 추가하여 화면 구성<br/>- 탭하면 FocusEntity 위치에 3D 엔티티를 배치<br/>- 시선 추적과 얼굴과의 거리를 표시하는 예제|
 |[ShortcutDemo](/ShortcutDemo)|2024.01.12|SwiftUI|- 시리로 단축어 작업 수행|
-|[SpriteKitSwiftUIDemo](/SpriteKitSwiftUIDemo)|2024.01.18|SwiftUI|- 탭할 때마다 떨어지는 상자가 생성되고 부딪히는 물리 효과 추가|
+|[SpriteKitSwiftUIDemo](/SpriteKitSwiftUIDemo)|2024.01.18|SwiftUI|- 탭할 때마다 떨어지는 상자가 생성되고 부딪히는 물리 효과 추가|
 |[NaverMapDemo](/NaverMapDemo)|2024.01.17|SwiftUI|- 사용자의 현재 위치를 나타내는 위치 오버레이 표시<br/>- CoreLocation을 이용한 현재 위치를 지속적으로 가져와서 지도에 표시하기<br/>- 정보 창(마커의 위 또는 지도의 특정 지점에 부가적인 정보를 나타내기 위한 오버레이) 추가<br/>- 이동경로 그리기(경로선 오버레이)|
 |[CombineDemo](/CombineDemo)|2024.01.15 - 2024.01.16|SwiftUI|- Combine과 Publisher, Subscriber 소개<br/>- Operator, Subject, Cancellable 소개<br/>- 네트워크에 Combine 이용 예제를 위한 날씨 API 호출<br/>- API 호출 네트워크에 Combine 이용 예제 추가|
 
